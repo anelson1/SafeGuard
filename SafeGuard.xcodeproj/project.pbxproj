@@ -1,0 +1,510 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3FEDED991CBC13F1005C4B56 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEDED981CBC13F1005C4B56 /* AppDelegate.swift */; };
+		3FEDED9B1CBC13F1005C4B56 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEDED9A1CBC13F1005C4B56 /* ViewController.swift */; };
+		3FEDED9E1CBC13F2005C4B56 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FEDED9C1CBC13F2005C4B56 /* Main.storyboard */; };
+		3FEDEDA01CBC13F2005C4B56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FEDED9F1CBC13F2005C4B56 /* Assets.xcassets */; };
+		3FEDEDA31CBC13F2005C4B56 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FEDEDA11CBC13F2005C4B56 /* LaunchScreen.storyboard */; };
+		3FEDEDAE1CBC13F2005C4B56 /* SafeGuardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEDEDAD1CBC13F2005C4B56 /* SafeGuardTests.swift */; };
+		3FEDEDB91CBC13F2005C4B56 /* SafeGuardUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEDEDB81CBC13F2005C4B56 /* SafeGuardUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3FEDEDAA1CBC13F2005C4B56 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3FEDED8D1CBC13F1005C4B56 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3FEDED941CBC13F1005C4B56;
+			remoteInfo = SafeGuard;
+		};
+		3FEDEDB51CBC13F2005C4B56 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3FEDED8D1CBC13F1005C4B56 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3FEDED941CBC13F1005C4B56;
+			remoteInfo = SafeGuard;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3FEDED951CBC13F1005C4B56 /* SafeGuard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SafeGuard.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3FEDED981CBC13F1005C4B56 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3FEDED9A1CBC13F1005C4B56 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3FEDED9D1CBC13F2005C4B56 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3FEDED9F1CBC13F2005C4B56 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3FEDEDA21CBC13F2005C4B56 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		3FEDEDA41CBC13F2005C4B56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3FEDEDA91CBC13F2005C4B56 /* SafeGuardTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SafeGuardTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3FEDEDAD1CBC13F2005C4B56 /* SafeGuardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafeGuardTests.swift; sourceTree = "<group>"; };
+		3FEDEDAF1CBC13F2005C4B56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3FEDEDB41CBC13F2005C4B56 /* SafeGuardUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SafeGuardUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3FEDEDB81CBC13F2005C4B56 /* SafeGuardUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafeGuardUITests.swift; sourceTree = "<group>"; };
+		3FEDEDBA1CBC13F2005C4B56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3FEDED921CBC13F1005C4B56 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3FEDEDA61CBC13F2005C4B56 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3FEDEDB11CBC13F2005C4B56 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3FEDED8C1CBC13F1005C4B56 = {
+			isa = PBXGroup;
+			children = (
+				3FEDED971CBC13F1005C4B56 /* SafeGuard */,
+				3FEDEDAC1CBC13F2005C4B56 /* SafeGuardTests */,
+				3FEDEDB71CBC13F2005C4B56 /* SafeGuardUITests */,
+				3FEDED961CBC13F1005C4B56 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3FEDED961CBC13F1005C4B56 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3FEDED951CBC13F1005C4B56 /* SafeGuard.app */,
+				3FEDEDA91CBC13F2005C4B56 /* SafeGuardTests.xctest */,
+				3FEDEDB41CBC13F2005C4B56 /* SafeGuardUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3FEDED971CBC13F1005C4B56 /* SafeGuard */ = {
+			isa = PBXGroup;
+			children = (
+				3FEDED981CBC13F1005C4B56 /* AppDelegate.swift */,
+				3FEDED9A1CBC13F1005C4B56 /* ViewController.swift */,
+				3FEDED9C1CBC13F2005C4B56 /* Main.storyboard */,
+				3FEDED9F1CBC13F2005C4B56 /* Assets.xcassets */,
+				3FEDEDA11CBC13F2005C4B56 /* LaunchScreen.storyboard */,
+				3FEDEDA41CBC13F2005C4B56 /* Info.plist */,
+			);
+			path = SafeGuard;
+			sourceTree = "<group>";
+		};
+		3FEDEDAC1CBC13F2005C4B56 /* SafeGuardTests */ = {
+			isa = PBXGroup;
+			children = (
+				3FEDEDAD1CBC13F2005C4B56 /* SafeGuardTests.swift */,
+				3FEDEDAF1CBC13F2005C4B56 /* Info.plist */,
+			);
+			path = SafeGuardTests;
+			sourceTree = "<group>";
+		};
+		3FEDEDB71CBC13F2005C4B56 /* SafeGuardUITests */ = {
+			isa = PBXGroup;
+			children = (
+				3FEDEDB81CBC13F2005C4B56 /* SafeGuardUITests.swift */,
+				3FEDEDBA1CBC13F2005C4B56 /* Info.plist */,
+			);
+			path = SafeGuardUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3FEDED941CBC13F1005C4B56 /* SafeGuard */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3FEDEDBD1CBC13F2005C4B56 /* Build configuration list for PBXNativeTarget "SafeGuard" */;
+			buildPhases = (
+				3FEDED911CBC13F1005C4B56 /* Sources */,
+				3FEDED921CBC13F1005C4B56 /* Frameworks */,
+				3FEDED931CBC13F1005C4B56 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SafeGuard;
+			productName = SafeGuard;
+			productReference = 3FEDED951CBC13F1005C4B56 /* SafeGuard.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3FEDEDA81CBC13F2005C4B56 /* SafeGuardTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3FEDEDC01CBC13F2005C4B56 /* Build configuration list for PBXNativeTarget "SafeGuardTests" */;
+			buildPhases = (
+				3FEDEDA51CBC13F2005C4B56 /* Sources */,
+				3FEDEDA61CBC13F2005C4B56 /* Frameworks */,
+				3FEDEDA71CBC13F2005C4B56 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3FEDEDAB1CBC13F2005C4B56 /* PBXTargetDependency */,
+			);
+			name = SafeGuardTests;
+			productName = SafeGuardTests;
+			productReference = 3FEDEDA91CBC13F2005C4B56 /* SafeGuardTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		3FEDEDB31CBC13F2005C4B56 /* SafeGuardUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3FEDEDC31CBC13F2005C4B56 /* Build configuration list for PBXNativeTarget "SafeGuardUITests" */;
+			buildPhases = (
+				3FEDEDB01CBC13F2005C4B56 /* Sources */,
+				3FEDEDB11CBC13F2005C4B56 /* Frameworks */,
+				3FEDEDB21CBC13F2005C4B56 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3FEDEDB61CBC13F2005C4B56 /* PBXTargetDependency */,
+			);
+			name = SafeGuardUITests;
+			productName = SafeGuardUITests;
+			productReference = 3FEDEDB41CBC13F2005C4B56 /* SafeGuardUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3FEDED8D1CBC13F1005C4B56 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Dank Memes and Son International Shipping Company Express";
+				TargetAttributes = {
+					3FEDED941CBC13F1005C4B56 = {
+						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = 87L6T26E9H;
+					};
+					3FEDEDA81CBC13F2005C4B56 = {
+						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = 87L6T26E9H;
+						TestTargetID = 3FEDED941CBC13F1005C4B56;
+					};
+					3FEDEDB31CBC13F2005C4B56 = {
+						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = 87L6T26E9H;
+						TestTargetID = 3FEDED941CBC13F1005C4B56;
+					};
+				};
+			};
+			buildConfigurationList = 3FEDED901CBC13F1005C4B56 /* Build configuration list for PBXProject "SafeGuard" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3FEDED8C1CBC13F1005C4B56;
+			productRefGroup = 3FEDED961CBC13F1005C4B56 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3FEDED941CBC13F1005C4B56 /* SafeGuard */,
+				3FEDEDA81CBC13F2005C4B56 /* SafeGuardTests */,
+				3FEDEDB31CBC13F2005C4B56 /* SafeGuardUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3FEDED931CBC13F1005C4B56 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3FEDEDA31CBC13F2005C4B56 /* LaunchScreen.storyboard in Resources */,
+				3FEDEDA01CBC13F2005C4B56 /* Assets.xcassets in Resources */,
+				3FEDED9E1CBC13F2005C4B56 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3FEDEDA71CBC13F2005C4B56 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3FEDEDB21CBC13F2005C4B56 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3FEDED911CBC13F1005C4B56 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3FEDED9B1CBC13F1005C4B56 /* ViewController.swift in Sources */,
+				3FEDED991CBC13F1005C4B56 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3FEDEDA51CBC13F2005C4B56 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3FEDEDAE1CBC13F2005C4B56 /* SafeGuardTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3FEDEDB01CBC13F2005C4B56 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3FEDEDB91CBC13F2005C4B56 /* SafeGuardUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3FEDEDAB1CBC13F2005C4B56 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3FEDED941CBC13F1005C4B56 /* SafeGuard */;
+			targetProxy = 3FEDEDAA1CBC13F2005C4B56 /* PBXContainerItemProxy */;
+		};
+		3FEDEDB61CBC13F2005C4B56 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3FEDED941CBC13F1005C4B56 /* SafeGuard */;
+			targetProxy = 3FEDEDB51CBC13F2005C4B56 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		3FEDED9C1CBC13F2005C4B56 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3FEDED9D1CBC13F2005C4B56 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		3FEDEDA11CBC13F2005C4B56 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3FEDEDA21CBC13F2005C4B56 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3FEDEDBB1CBC13F2005C4B56 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3FEDEDBC1CBC13F2005C4B56 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3FEDEDBE1CBC13F2005C4B56 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = SafeGuard/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "A-Weapon-To-Surpass-Metal-Gear.SafeGuard";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		3FEDEDBF1CBC13F2005C4B56 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = SafeGuard/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "A-Weapon-To-Surpass-Metal-Gear.SafeGuard";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		3FEDEDC11CBC13F2005C4B56 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = SafeGuardTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "A-Weapon-To-Surpass-Metal-Gear.SafeGuardTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SafeGuard.app/SafeGuard";
+			};
+			name = Debug;
+		};
+		3FEDEDC21CBC13F2005C4B56 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = SafeGuardTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "A-Weapon-To-Surpass-Metal-Gear.SafeGuardTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SafeGuard.app/SafeGuard";
+			};
+			name = Release;
+		};
+		3FEDEDC41CBC13F2005C4B56 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = SafeGuardUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "A-Weapon-To-Surpass-Metal-Gear.SafeGuardUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = SafeGuard;
+			};
+			name = Debug;
+		};
+		3FEDEDC51CBC13F2005C4B56 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = SafeGuardUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "A-Weapon-To-Surpass-Metal-Gear.SafeGuardUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = SafeGuard;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3FEDED901CBC13F1005C4B56 /* Build configuration list for PBXProject "SafeGuard" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3FEDEDBB1CBC13F2005C4B56 /* Debug */,
+				3FEDEDBC1CBC13F2005C4B56 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3FEDEDBD1CBC13F2005C4B56 /* Build configuration list for PBXNativeTarget "SafeGuard" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3FEDEDBE1CBC13F2005C4B56 /* Debug */,
+				3FEDEDBF1CBC13F2005C4B56 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		3FEDEDC01CBC13F2005C4B56 /* Build configuration list for PBXNativeTarget "SafeGuardTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3FEDEDC11CBC13F2005C4B56 /* Debug */,
+				3FEDEDC21CBC13F2005C4B56 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		3FEDEDC31CBC13F2005C4B56 /* Build configuration list for PBXNativeTarget "SafeGuardUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3FEDEDC41CBC13F2005C4B56 /* Debug */,
+				3FEDEDC51CBC13F2005C4B56 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3FEDED8D1CBC13F1005C4B56 /* Project object */;
+}

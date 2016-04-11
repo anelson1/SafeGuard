@@ -14,6 +14,7 @@
 		3FEDEDA31CBC13F2005C4B56 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FEDEDA11CBC13F2005C4B56 /* LaunchScreen.storyboard */; };
 		3FEDEDAE1CBC13F2005C4B56 /* SafeGuardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEDEDAD1CBC13F2005C4B56 /* SafeGuardTests.swift */; };
 		3FEDEDB91CBC13F2005C4B56 /* SafeGuardUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEDEDB81CBC13F2005C4B56 /* SafeGuardUITests.swift */; };
+		3FEDEDC71CBC163A005C4B56 /* password.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEDEDC61CBC163A005C4B56 /* password.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		3FEDEDB41CBC13F2005C4B56 /* SafeGuardUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SafeGuardUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FEDEDB81CBC13F2005C4B56 /* SafeGuardUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafeGuardUITests.swift; sourceTree = "<group>"; };
 		3FEDEDBA1CBC13F2005C4B56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3FEDEDC61CBC163A005C4B56 /* password.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = password.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 				3FEDED981CBC13F1005C4B56 /* AppDelegate.swift */,
 				3FEDED9A1CBC13F1005C4B56 /* ViewController.swift */,
 				3FEDED9C1CBC13F2005C4B56 /* Main.storyboard */,
+				3FEDEDC61CBC163A005C4B56 /* password.swift */,
 				3FEDED9F1CBC13F2005C4B56 /* Assets.xcassets */,
 				3FEDEDA11CBC13F2005C4B56 /* LaunchScreen.storyboard */,
 				3FEDEDA41CBC13F2005C4B56 /* Info.plist */,
@@ -261,6 +264,7 @@
 			files = (
 				3FEDED9B1CBC13F1005C4B56 /* ViewController.swift in Sources */,
 				3FEDED991CBC13F1005C4B56 /* AppDelegate.swift in Sources */,
+				3FEDEDC71CBC163A005C4B56 /* password.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

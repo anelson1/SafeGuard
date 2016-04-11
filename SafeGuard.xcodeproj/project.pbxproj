@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3FADA2621CBC15A000AF4659 /* NewPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FADA2611CBC15A000AF4659 /* NewPassword.swift */; };
 		3FEDED991CBC13F1005C4B56 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEDED981CBC13F1005C4B56 /* AppDelegate.swift */; };
 		3FEDED9B1CBC13F1005C4B56 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEDED9A1CBC13F1005C4B56 /* ViewController.swift */; };
 		3FEDED9E1CBC13F2005C4B56 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FEDED9C1CBC13F2005C4B56 /* Main.storyboard */; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3FADA2611CBC15A000AF4659 /* NewPassword.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewPassword.swift; sourceTree = "<group>"; };
 		3FEDED951CBC13F1005C4B56 /* SafeGuard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SafeGuard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FEDED981CBC13F1005C4B56 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3FEDED9A1CBC13F1005C4B56 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 			children = (
 				3FEDED981CBC13F1005C4B56 /* AppDelegate.swift */,
 				3FEDED9A1CBC13F1005C4B56 /* ViewController.swift */,
+				3FADA2611CBC15A000AF4659 /* NewPassword.swift */,
 				3FEDED9C1CBC13F2005C4B56 /* Main.storyboard */,
 				3FEDED9F1CBC13F2005C4B56 /* Assets.xcassets */,
 				3FEDEDA11CBC13F2005C4B56 /* LaunchScreen.storyboard */,
@@ -260,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3FEDED9B1CBC13F1005C4B56 /* ViewController.swift in Sources */,
+				3FADA2621CBC15A000AF4659 /* NewPassword.swift in Sources */,
 				3FEDED991CBC13F1005C4B56 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -487,6 +491,7 @@
 				3FEDEDBF1CBC13F2005C4B56 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3FEDEDC01CBC13F2005C4B56 /* Build configuration list for PBXNativeTarget "SafeGuardTests" */ = {
 			isa = XCConfigurationList;
@@ -495,6 +500,7 @@
 				3FEDEDC21CBC13F2005C4B56 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3FEDEDC31CBC13F2005C4B56 /* Build configuration list for PBXNativeTarget "SafeGuardUITests" */ = {
 			isa = XCConfigurationList;
@@ -503,6 +509,7 @@
 				3FEDEDC51CBC13F2005C4B56 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

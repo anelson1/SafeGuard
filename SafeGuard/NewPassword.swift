@@ -10,8 +10,9 @@ import UIKit
 
 class NewPassword: UIViewController {
     
-    @IBOutlet weak var enterTextField: UITextField!
+   
     @IBOutlet weak var confirmTextField: UITextField!
+    @IBOutlet weak var enterTextField: UITextField!
     var passwords = password()
     let myDefaults = NSUserDefaults.standardUserDefaults()
     
@@ -21,12 +22,11 @@ class NewPassword: UIViewController {
     }
     
     
-    
-    @IBAction func savePassword(sender: AnyObject) {
+    @IBAction func makePassword(sender: AnyObject) {
         if enterTextField.text == confirmTextField.text
         {
             passwords.password = enterTextField.text!
-            myDefaults.setObject(enterTextField.text, forKey: "Dank")
+            myDefaults.setObject(enterTextField.text, forKey: "passwordstorage")
             let alert = UIAlertController(title: "Password Confirm", message: "Your password has been saved", preferredStyle: .Alert)
             let alertaction = UIAlertAction(title: "OK", style: .Default, handler: nil)
             alert.addAction(alertaction)
@@ -40,6 +40,14 @@ class NewPassword: UIViewController {
             alert.addAction(alertaction)
             presentViewController(alert, animated: true, completion: nil)
         }
+
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let dvc = segue.destinationViewController as! ViewController
+        
+        dvc.passwords = self.passwords
+        
     }
     
     

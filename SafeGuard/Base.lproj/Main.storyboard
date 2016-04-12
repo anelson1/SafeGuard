@@ -56,6 +56,13 @@
                                     <action selector="resetPasswordAdmin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3RA-dI-T2W"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i5j-I0-8YI">
+                                <rect key="frame" x="256" y="271" width="88" height="30"/>
+                                <state key="normal" title="Use TouchID"/>
+                                <connections>
+                                    <action selector="touchIDButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6Ub-mA-w01"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>

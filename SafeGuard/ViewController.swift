@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import LocalAuthentication
+
 
 class ViewController: UIViewController, UIAlertViewDelegate {
     @IBOutlet weak var textField: UITextField!
@@ -26,6 +28,9 @@ class ViewController: UIViewController, UIAlertViewDelegate {
     print("Test")
     }
     
+    @IBAction func touchIDButton(sender: AnyObject) {
+        authenticateUser()
+    }
     @IBAction func makePassword(sender: AnyObject) {
         if passwords.password != ""
         {
@@ -85,7 +90,88 @@ class ViewController: UIViewController, UIAlertViewDelegate {
         alert.addAction(alertaction)
         presentViewController(alert, animated: true, completion: nil)
     }
-    
+    func authenticateUser() {
+        // Get the local authentication context.
+        let context = LAContext()
+        
+        // Declare a NSError variable.
+        var error: NSError?
+        
+        // Set the reason string that will appear on the authentication alert.
+        var reasonString = "Authentication is needed to access your notes."
+        
+        // Check if the device can evaluate the policy.
+        if context.canEvaluatePolicy(LAPolicy.DeviceOwnerAuthenticationWithBiometrics, error: &error) {
+            [context .evaluatePolicy(LAPolicy.DeviceOwnerAuthenticationWithBiometrics, localizedReason: reasonString, reply: { (success: Bool, evalPolicyError: NSError?) -> Void in
+                
+                if success {
+                    self.performSegueWithIdentifier("SpicyMeme", sender: nil)
+                    
+                }
+                else{
+                    // If authentication failed then show a message to the console with a short description.
+                    // In case that the error is a user fallback, then show the password alert view.
+                    print(evalPolicyError?.localizedDescription)
+                    
+                    switch evalPolicyError!.code {
+                        
+                    case LAError.SystemCancel.rawValue:
+                        print("Authentication was cancelled by the system")
+                        
+                    case LAError.UserCancel.rawValue:
+                        print("Authentication was cancelled by the user")
+                        
+                    case LAError.UserFallback.rawValue:
+                        print("User selected to enter custom password")
+                        self.showPasswordAlert()
+                        
+                    default:
+                        print("Authentication failed")
+                        self.showPasswordAlert()
+                    }
+                }
+                
+            })]
+        }
+        else{
+            switch error!.code{
+                
+            case LAError.TouchIDNotEnrolled.rawValue:
+                print("TouchID is not enrolled")
+                
+            case LAError.PasscodeNotSet.rawValue:
+                print("A passcode has not been set")
+                
+            default:
+                print("TouchID not available")
+            }
+            
+            print(error?.localizedDescription)
+            
+            self.showPasswordAlert()
+        }
+    }
+    func showPasswordAlert() {
+        var passwordAlert : UIAlertView = UIAlertView(title: "SafeGuard", message: "Please type your password", delegate: self, cancelButtonTitle: "Cancel", otherButtonTitles: "Okay")
+        passwordAlert.alertViewStyle = UIAlertViewStyle.SecureTextInput
+        passwordAlert.show()
+    }
+    func alertView(alertView: UIAlertView!, clickedButtonAtIndex buttonIndex: Int) {
+        if buttonIndex == 1 {
+            if !alertView.textFieldAtIndex(0)!.text!.isEmpty {
+                if alertView.textFieldAtIndex(0)!.text == passwords.password {
+                    performSegueWithIdentifier("SpicyMeme", sender: nil)
+                    
+                }
+                else{
+                    showPasswordAlert()
+                }
+            }
+            else{
+                showPasswordAlert()
+            }
+        }
+    }
 }
 
 

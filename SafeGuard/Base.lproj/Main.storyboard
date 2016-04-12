@@ -40,7 +40,7 @@
                                 <rect key="frame" x="241" y="452" width="119" height="30"/>
                                 <state key="normal" title="Make a password"/>
                                 <connections>
-                                    <segue destination="Jxr-WI-wk0" kind="presentation" id="Y15-7K-0aS"/>
+                                    <action selector="makePassword:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tLp-2A-yMB"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XJj-Ly-caM">
@@ -48,6 +48,12 @@
                                 <state key="normal" title="Forgot Password?"/>
                                 <connections>
                                     <action selector="resetPassword:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JiJ-dB-g6O"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fc4-hg-9HS">
+                                <rect key="frame" x="285" y="153" width="30" height="30"/>
+                                <connections>
+                                    <action selector="resetPasswordAdmin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3RA-dI-T2W"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -59,17 +65,20 @@
                             <constraint firstItem="f93-J4-kTJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="TwC-Q2-MwG"/>
                             <constraint firstItem="gE0-au-bKF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Znh-yU-SJL"/>
                             <constraint firstItem="f08-PS-ok7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gFb-ZS-8r3"/>
+                            <constraint firstItem="fc4-hg-9HS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="p74-3a-QXT"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="gPW-d8-MkK"/>
                     <connections>
                         <outlet property="textField" destination="f93-J4-kTJ" id="Xh9-tN-4im"/>
                         <segue destination="slU-ud-aw3" kind="show" identifier="SpicyMeme" id="PEM-fX-UOp"/>
+                        <segue destination="Jxr-WI-wk0" kind="presentation" identifier="toMakePassword" id="Mlq-MN-3NE"/>
+                        <segue destination="Jxr-WI-wk0" kind="show" id="EWu-mr-Gj3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1100" y="306"/>
+            <point key="canvasLocation" x="959" y="565"/>
         </scene>
         <!--New Password-->
         <scene sceneID="htM-L2-ZwE">
@@ -106,7 +115,7 @@
                                     <navigationItem title="Make a Password" id="5kO-wE-Pqp">
                                         <barButtonItem key="leftBarButtonItem" systemItem="done" id="ADW-gM-y63">
                                             <connections>
-                                                <segue destination="BYZ-38-t0r" kind="show" id="Z0a-FP-MzV"/>
+                                                <segue destination="BYZ-38-t0r" kind="show" id="hrU-96-6bO"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -131,7 +140,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i8Q-OE-SK0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1100" y="1125"/>
+            <point key="canvasLocation" x="1241" y="972"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="dj6-Nf-5zs">
@@ -171,6 +180,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Z0a-FP-MzV"/>
+        <segue reference="Mlq-MN-3NE"/>
+        <segue reference="hrU-96-6bO"/>
     </inferredMetricsTieBreakers>
 </document>

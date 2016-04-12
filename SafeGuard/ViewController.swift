@@ -21,7 +21,20 @@ class ViewController: UIViewController, UIAlertViewDelegate {
             passwords.password = String(password1)
         }
     }
+    @IBAction func resetPasswordAdmin(sender: AnyObject) {
+        passwords.password = ""
+    print("Test")
+    }
     
+    @IBAction func makePassword(sender: AnyObject) {
+        if passwords.password != ""
+        {
+            makeAlertView("Password", message: "A password already exists, if you forgot your password, please use the forgot password button", buttonTitle: "Ok")
+        }
+        else
+        {
+     performSegueWithIdentifier("toMakePassword", sender: nil)        }
+    }
     
     @IBAction func resetPassword(sender: AnyObject) {
         let alertController = UIAlertController(title: "Password?", message: "Please input your Password:", preferredStyle: .Alert)

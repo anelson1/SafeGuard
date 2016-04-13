@@ -17,6 +17,8 @@ class ViewController: UIViewController, UIAlertViewDelegate {
     var passwords = password()
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "l")!)
+
         
         if let password1 = myDefaults.objectForKey("passwordstorage")
         {
@@ -73,7 +75,7 @@ class ViewController: UIViewController, UIAlertViewDelegate {
     @IBAction func continueButton(sender: AnyObject) {
         if passwords.password == textField.text
         {
-            performSegueWithIdentifier("SpicyMeme", sender: nil)
+            performSegueWithIdentifier("toMain", sender: nil)
             
         }
         else{
@@ -98,14 +100,14 @@ class ViewController: UIViewController, UIAlertViewDelegate {
         var error: NSError?
         
         // Set the reason string that will appear on the authentication alert.
-        var reasonString = "Authentication is needed to access your notes."
+        var reasonString = "Authentication is needed to access your files."
         
         // Check if the device can evaluate the policy.
         if context.canEvaluatePolicy(LAPolicy.DeviceOwnerAuthenticationWithBiometrics, error: &error) {
             [context .evaluatePolicy(LAPolicy.DeviceOwnerAuthenticationWithBiometrics, localizedReason: reasonString, reply: { (success: Bool, evalPolicyError: NSError?) -> Void in
                 
                 if success {
-                    self.performSegueWithIdentifier("SpicyMeme", sender: nil)
+                    self.performSegueWithIdentifier("toMain", sender: nil)
                     
                 }
                 else{

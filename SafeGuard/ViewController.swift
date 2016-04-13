@@ -17,7 +17,7 @@ class ViewController: UIViewController, UIAlertViewDelegate {
     var passwords = password()
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "l")!)
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "ll")!)
 
         
         if let password1 = myDefaults.objectForKey("passwordstorage")

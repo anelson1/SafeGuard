@@ -11,6 +11,8 @@ import UIKit
 class NewPassword: UIViewController {
     
    
+    @IBOutlet weak var question: UILabel!
+    @IBOutlet weak var questionField: UITextField!
     @IBOutlet weak var confirmTextField: UITextField!
     @IBOutlet weak var enterTextField: UITextField!
     var passwords = password()
@@ -18,11 +20,15 @@ class NewPassword: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "ll")!)
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "l")!)
 
         
     }
     
+    @IBAction func pickQuestion(sender: AnyObject) {
+        let alert = UIAlertController(title: "Select question", message: nil, preferredStyle: .ActionSheet)
+        addActionSheetOption("Favorite Pets Name?")
+    }
     
     @IBAction func makePassword(sender: AnyObject) {
         if enterTextField.text == confirmTextField.text
@@ -50,6 +56,10 @@ class NewPassword: UIViewController {
         
         dvc.passwords = self.passwords
         
+    }
+    func addActionSheetOption(title: String)
+    {
+      let alert = UIAlertAction(title: title, style: .Default, handler: nil)
     }
     
     

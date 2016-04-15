@@ -120,18 +120,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="memes" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="C3Q-zO-hBv">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="C3Q-zO-hBv">
                                 <rect key="frame" x="230" y="109" width="141" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="P27-lj-Dfg">
-                                <rect key="frame" x="230" y="207" width="141" height="30"/>
+                                <rect key="frame" x="230" y="188" width="141" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oKB-Ya-f7d">
-                                <rect key="frame" x="247" y="295" width="107" height="30"/>
+                                <rect key="frame" x="247" y="364" width="107" height="30"/>
                                 <state key="normal" title="Make Password"/>
                                 <connections>
                                     <action selector="makePassword:" destination="Jxr-WI-wk0" eventType="touchUpInside" id="Iwx-To-uQb"/>
@@ -149,12 +149,32 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Security Question" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Cso-sJ-F2y">
+                                <rect key="frame" x="230" y="293" width="141" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N3R-0O-Eyc">
+                                <rect key="frame" x="379" y="293" width="95" height="30"/>
+                                <state key="normal" title="Pick Question"/>
+                                <connections>
+                                    <action selector="pickQuestion:" destination="Jxr-WI-wk0" eventType="touchUpInside" id="JyV-Rg-rDh"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="d" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OmX-HL-9nE">
+                                <rect key="frame" x="310" y="250" width="44" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="hCp-32-9Hn" firstAttribute="top" secondItem="o2a-gg-qEH" secondAttribute="topMargin" id="4Kh-Ak-c8W"/>
                             <constraint firstItem="hCp-32-9Hn" firstAttribute="centerX" secondItem="o2a-gg-qEH" secondAttribute="centerX" id="6S1-8h-uyC"/>
                             <constraint firstItem="P27-lj-Dfg" firstAttribute="centerX" secondItem="o2a-gg-qEH" secondAttribute="centerX" id="GbH-Qh-Wyy"/>
+                            <constraint firstItem="OmX-HL-9nE" firstAttribute="centerX" secondItem="o2a-gg-qEH" secondAttribute="centerX" id="IUP-T3-DL9"/>
+                            <constraint firstItem="Cso-sJ-F2y" firstAttribute="centerX" secondItem="o2a-gg-qEH" secondAttribute="centerX" id="MmY-ks-BUP"/>
                             <constraint firstItem="C3Q-zO-hBv" firstAttribute="centerX" secondItem="o2a-gg-qEH" secondAttribute="centerX" id="cKq-Ri-W58"/>
                             <constraint firstAttribute="trailingMargin" secondItem="hCp-32-9Hn" secondAttribute="trailing" constant="-20" id="mIA-u3-aIG"/>
                             <constraint firstItem="oKB-Ya-f7d" firstAttribute="centerX" secondItem="o2a-gg-qEH" secondAttribute="centerX" id="n0x-br-MB0"/>
@@ -169,6 +189,8 @@
                     <connections>
                         <outlet property="confirmTextField" destination="P27-lj-Dfg" id="0D8-RC-nYH"/>
                         <outlet property="enterTextField" destination="C3Q-zO-hBv" id="pp0-V1-JPG"/>
+                        <outlet property="question" destination="OmX-HL-9nE" id="Jq1-Sn-NIt"/>
+                        <outlet property="questionField" destination="Cso-sJ-F2y" id="GDF-za-XS5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i8Q-OE-SK0" userLabel="First Responder" sceneMemberID="firstResponder"/>

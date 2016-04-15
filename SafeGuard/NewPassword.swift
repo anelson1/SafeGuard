@@ -27,7 +27,32 @@ class NewPassword: UIViewController {
     
     @IBAction func pickQuestion(sender: AnyObject) {
         let alert = UIAlertController(title: "Select question", message: nil, preferredStyle: .ActionSheet)
-        addActionSheetOption("Favorite Pets Name?")
+        let alertAction = UIAlertAction(title: "Favorite Pets Name?", style: .Default) { (ACTION) in
+            self.question.text = "Favorite Pets Name?"
+        }
+        let alertAction1 = UIAlertAction(title: "Mothers Maiden Name?", style: .Default) { (ACTION) in
+            self.question.text = "Mothers Maiden Name?"
+        }
+        let alertAction2 = UIAlertAction(title: "Street You Grew Up On?", style: .Default) { (ACTION) in
+            self.question.text = "Street You Grew Up On?"
+        }
+
+        let alertAction3 = UIAlertAction(title: "Favorite Teacher?", style: .Default) { (ACTION) in
+            self.question.text = "Favorite Teacher"
+        }
+
+        let alertAction4 = UIAlertAction(title: "Favorite Fictional Character", style: .Default) { (ACTION) in
+            self.question.text = "Favorite Fictional Character"
+        }
+
+
+
+              alert.addAction(alertAction)
+        alert.addAction(alertAction1)
+        alert.addAction(alertAction2)
+        alert.addAction(alertAction3)
+        alert.addAction(alertAction4)
+        presentViewController(alert, animated: true, completion: nil)
     }
     
     @IBAction func makePassword(sender: AnyObject) {
@@ -59,7 +84,9 @@ class NewPassword: UIViewController {
     }
     func addActionSheetOption(title: String)
     {
-      let alert = UIAlertAction(title: title, style: .Default, handler: nil)
+      let alertAction = UIAlertAction(title: title, style: .Default) { (ACTION) in
+        self.question.text = title
+        }
     }
     
     

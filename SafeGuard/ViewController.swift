@@ -17,7 +17,7 @@ class ViewController: UIViewController, UIAlertViewDelegate {
     var passwords = password()
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "ll")!)
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "l")!)
 
         
         if let password1 = myDefaults.objectForKey("passwordstorage")
@@ -154,7 +154,7 @@ class ViewController: UIViewController, UIAlertViewDelegate {
         }
     }
     func showPasswordAlert() {
-        var passwordAlert : UIAlertView = UIAlertView(title: "SafeGuard", message: "Please type your password", delegate: self, cancelButtonTitle: "Cancel", otherButtonTitles: "Okay")
+        var passwordAlert : UIAlertView = UIAlertView(title: "SafeGuard", message: "Device is not Touch ID enrolled, Please enter password", delegate: self, cancelButtonTitle: "Cancel", otherButtonTitles: "Okay")
         passwordAlert.alertViewStyle = UIAlertViewStyle.SecureTextInput
         passwordAlert.show()
     }

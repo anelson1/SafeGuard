@@ -17,16 +17,27 @@ class ViewController: UIViewController, UIAlertViewDelegate {
     var passwords = password()
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "l")!)
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "ll")!)
 
         
         if let password1 = myDefaults.objectForKey("passwordstorage")
         {
             passwords.password = String(password1)
         }
+        if let question = myDefaults.objectForKey("question")
+        {
+            passwords.question = String(question)
+        }
+        if let questionAnswer = myDefaults.objectForKey("questionAnswer")
+        {
+            passwords.questionAnswer = String(questionAnswer)
+        }
+
     }
     @IBAction func resetPasswordAdmin(sender: AnyObject) {
         passwords.password = ""
+        passwords.question = ""
+        passwords.questionAnswer = ""
     print("Test")
     }
     
@@ -44,11 +55,13 @@ class ViewController: UIViewController, UIAlertViewDelegate {
     }
     
     @IBAction func resetPassword(sender: AnyObject) {
-        let alertController = UIAlertController(title: "Password?", message: "Please input your Password:", preferredStyle: .Alert)
+        if passwords.password != ""
+        {
+        let alertController = UIAlertController(title: "Reset Password", message: passwords.question, preferredStyle: .Alert)
         
         let confirmAction = UIAlertAction(title: "Confirm", style: .Default) { (_) in
             if let field = alertController.textFields![0] as? UITextField {
-                if field.text == self.passwords.password
+                if field.text == self.passwords.questionAnswer
                 {
                     self.passwords.password = ""
                     self.makeAlertView("Password", message: "Password was reset. Please make a new one", buttonTitle: "Ok")
@@ -70,6 +83,10 @@ class ViewController: UIViewController, UIAlertViewDelegate {
         
         self.presentViewController(alertController, animated: true, completion: nil)
 
+    }
+        else{
+            makeAlertView("Password", message: "Password does not exist, please make one", buttonTitle: "Ok")
+        }
     }
     
     @IBAction func continueButton(sender: AnyObject) {
@@ -93,16 +110,10 @@ class ViewController: UIViewController, UIAlertViewDelegate {
         presentViewController(alert, animated: true, completion: nil)
     }
     func authenticateUser() {
-        // Get the local authentication context.
         let context = LAContext()
+                var error: NSError?
+                var reasonString = "Authentication is needed to access your files."
         
-        // Declare a NSError variable.
-        var error: NSError?
-        
-        // Set the reason string that will appear on the authentication alert.
-        var reasonString = "Authentication is needed to access your files."
-        
-        // Check if the device can evaluate the policy.
         if context.canEvaluatePolicy(LAPolicy.DeviceOwnerAuthenticationWithBiometrics, error: &error) {
             [context .evaluatePolicy(LAPolicy.DeviceOwnerAuthenticationWithBiometrics, localizedReason: reasonString, reply: { (success: Bool, evalPolicyError: NSError?) -> Void in
                 
@@ -111,9 +122,7 @@ class ViewController: UIViewController, UIAlertViewDelegate {
                     
                 }
                 else{
-                    // If authentication failed then show a message to the console with a short description.
-                    // In case that the error is a user fallback, then show the password alert view.
-                    print(evalPolicyError?.localizedDescription)
+                                       print(evalPolicyError?.localizedDescription)
                     
                     switch evalPolicyError!.code {
                         

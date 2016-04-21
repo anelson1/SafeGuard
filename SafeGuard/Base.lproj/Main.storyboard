@@ -4,6 +4,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -198,12 +199,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i8Q-OE-SK0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="213" y="1059"/>
+            <point key="canvasLocation" x="1031" y="903"/>
         </scene>
-        <!--View Controller-->
+        <!--Picture Screen View Controller-->
         <scene sceneID="dj6-Nf-5zs">
             <objects>
-                <viewController id="slU-ud-aw3" sceneMemberID="viewController">
+                <viewController id="slU-ud-aw3" customClass="pictureScreenViewController" customModule="SafeGuard" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="mwt-wJ-2m2"/>
                         <viewControllerLayoutGuide type="bottom" id="A4b-Uw-uDd"/>
@@ -211,15 +212,163 @@
                     <view key="view" contentMode="scaleToFill" id="h7v-Yi-ijK">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="enA-iC-qwl">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                <items>
+                                    <navigationItem id="6of-p5-tVf">
+                                        <leftBarButtonItems>
+                                            <barButtonItem systemItem="done" id="r0R-b9-lmo">
+                                                <connections>
+                                                    <segue destination="BYZ-38-t0r" kind="show" id="ye9-jP-Q3I"/>
+                                                </connections>
+                                            </barButtonItem>
+                                            <barButtonItem systemItem="camera" id="EbL-TB-taL">
+                                                <connections>
+                                                    <action selector="imageChooser:" destination="slU-ud-aw3" id="3kk-fr-uDi"/>
+                                                </connections>
+                                            </barButtonItem>
+                                        </leftBarButtonItems>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="l" translatesAutoresizingMaskIntoConstraints="NO" id="6TA-t4-chm">
+                                <rect key="frame" x="0.0" y="44" width="302" height="251"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="251" id="WLz-gY-ofc"/>
+                                    <constraint firstAttribute="width" constant="302" id="vkD-6R-FWo"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xJI-qH-3Jk">
+                                <rect key="frame" x="304" y="44" width="296" height="251"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aha-AF-38Y">
+                                <rect key="frame" x="0.0" y="295" width="302" height="305"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hpR-mV-txp">
+                                <rect key="frame" x="304" y="295" width="296" height="305"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="6TA-t4-chm" firstAttribute="centerX" secondItem="h7v-Yi-ijK" secondAttribute="centerX" constant="-149" id="P93-MQ-qDM"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="imageFour" destination="hpR-mV-txp" id="i9m-Up-dSM"/>
+                        <outlet property="imageOne" destination="6TA-t4-chm" id="ZN5-HY-gXR"/>
+                        <outlet property="imageThree" destination="aha-AF-38Y" id="fVW-Kq-obm"/>
+                        <outlet property="imageTwo" destination="xJI-qH-3Jk" id="uLQ-2n-Ljh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pa7-s9-DZB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1828" y="320"/>
+            <point key="canvasLocation" x="1796" y="313"/>
+        </scene>
+        <!--Page View Controller-->
+        <scene sceneID="OP2-sS-Ris">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="qe4-te-Qvz" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eXY-da-O5V" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2494" y="409"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="zjw-Zm-CDA">
+            <objects>
+                <viewController storyboardIdentifier="RedViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="4DE-6H-YCt" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="uKq-bl-Sdc"/>
+                        <viewControllerLayoutGuide type="bottom" id="kmc-be-qlJ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="QB6-Em-GSI">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zfa-t1-KZO">
+                                <rect key="frame" x="0.0" y="0.0" width="303" height="302"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="t0g-8X-Z9U">
+                                <rect key="frame" x="0.0" y="298" width="303" height="302"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Exi-bm-U1K">
+                                <rect key="frame" x="302" y="298" width="298" height="302"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bNq-IO-hos">
+                                <rect key="frame" x="302" y="0.0" width="298" height="302"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gSg-eb-m0m" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2827" y="1053"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="bYL-KR-1v9">
+            <objects>
+                <viewController storyboardIdentifier="BlueViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="r2d-ve-Bqt" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="E51-Ip-7nB"/>
+                        <viewControllerLayoutGuide type="bottom" id="db9-uA-KOY"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="30b-N7-MD9">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="l5D-vG-Q0m">
+                                <rect key="frame" x="0.0" y="298" width="303" height="302"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CUj-1n-PIb">
+                                <rect key="frame" x="302" y="298" width="298" height="302"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kCE-nu-7hD">
+                                <rect key="frame" x="302" y="0.0" width="298" height="302"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ek6-L5-JsO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2359" y="1208"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="8fX-Nb-1hY">
+            <objects>
+                <viewController storyboardIdentifier="GreenViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="phz-bG-SUp" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Cec-cf-p35"/>
+                        <viewControllerLayoutGuide type="bottom" id="pNk-NR-eQy"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="73U-ep-WIl">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XCc-uO-6Qv">
+                                <rect key="frame" x="0.0" y="298" width="303" height="302"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lpH-x3-gZL">
+                                <rect key="frame" x="302" y="298" width="298" height="302"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7Su-53-7cK">
+                                <rect key="frame" x="302" y="0.0" width="298" height="302"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aJD-Gc-WG6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1889" y="1163"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="l" width="1440" height="2560"/>
+    </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="ye9-jP-Q3I"/>
         <segue reference="Mlq-MN-3NE"/>
     </inferredMetricsTieBreakers>
 </document>

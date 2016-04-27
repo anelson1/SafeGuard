@@ -8,22 +8,29 @@
 
 import UIKit
 
-class NewPassword: UIViewController {
+class NewPassword: UIViewController, UITextFieldDelegate {
     
-   
+    
     @IBOutlet weak var question: UILabel!
     @IBOutlet weak var questionField: UITextField!
     @IBOutlet weak var confirmTextField: UITextField!
     @IBOutlet weak var enterTextField: UITextField!
     var passwords = password()
     let myDefaults = NSUserDefaults.standardUserDefaults()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "ll")!)
-    
-
         
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "ll")!)
+        confirmTextField.delegate = self
+        enterTextField.delegate = self
+        questionField.delegate = self
+    }
+    
+    @IBAction func onScreenTapped(sender: AnyObject) {
+        enterTextField.resignFirstResponder()
+        confirmTextField.resignFirstResponder()
+        questionField.resignFirstResponder()
     }
     
     @IBAction func pickQuestion(sender: AnyObject) {
@@ -39,25 +46,25 @@ class NewPassword: UIViewController {
         let alertAction2 = UIAlertAction(title: "Street You Grew Up On?", style: .Default) { (ACTION) in
             self.question.text = "Street You Grew Up On?"
             self.passwords.question = "Street You Grew Up On?"
-
+            
         }
-
+        
         let alertAction3 = UIAlertAction(title: "Favorite Teacher?", style: .Default) { (ACTION) in
             self.question.text = "Favorite Teacher"
             self.passwords.question = "Favorite Teacher?"
-
+            
         }
-
+        
         let alertAction4 = UIAlertAction(title: "Favorite Fictional Character?", style: .Default) { (ACTION) in
             self.question.text = "Favorite Fictional Character?"
             self.passwords.question = "Favorite Fictional Character?"
-
+            
         }
         let cancel = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
-
-
-
-              alert.addAction(alertAction)
+        
+        
+        
+        alert.addAction(alertAction)
         alert.addAction(alertAction1)
         alert.addAction(alertAction2)
         alert.addAction(alertAction3)
@@ -87,7 +94,7 @@ class NewPassword: UIViewController {
             alert.addAction(alertaction)
             presentViewController(alert, animated: true, completion: nil)
         }
-            else if passwords.question == ""
+        else if passwords.question == ""
         {
             let alert = UIAlertController(title: "Password Confirm", message: "You did not pick a secret question", preferredStyle: .Alert)
             let alertaction = UIAlertAction(title: "OK", style: .Default, handler: nil)
@@ -100,15 +107,12 @@ class NewPassword: UIViewController {
             alert.addAction(alertaction)
             presentViewController(alert, animated: true, completion: nil)
         }
-
+        
+    }
+    func textFieldShouldReturn(textField: UITextField!) -> Bool {   //delegate method
+        textField.resignFirstResponder()
+        return true
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let dvc = segue.destinationViewController as! ViewController
-        
-        dvc.passwords = self.passwords
-        
-    }
-
     
 }

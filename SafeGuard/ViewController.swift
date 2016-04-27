@@ -3,22 +3,24 @@
 //  Password Tester
 //
 //  Created by Student on 4/5/16.
-//  Copyright © 2016 Dank s and Son International Shipping Company Express. All rights reserved.
+//  Copyright © 2016 Dank Memes and Son International Shipping Company Express. All rights reserved.
 //
 
 import UIKit
 import LocalAuthentication
 
 
-class ViewController: UIViewController, UIAlertViewDelegate {
+class ViewController: UIViewController, UIAlertViewDelegate, UITextFieldDelegate {
     @IBOutlet weak var textField: UITextField!
     let myDefaults = NSUserDefaults.standardUserDefaults()
     let passwordstorage = "passwordstorage"
     var passwords = password()
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController!.navigationBar.barTintColor = UIColor.grayColor()
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "ll")!)
-
+        textField.delegate = self
+        
         
         if let password1 = myDefaults.objectForKey("passwordstorage")
         {
@@ -32,13 +34,27 @@ class ViewController: UIViewController, UIAlertViewDelegate {
         {
             passwords.questionAnswer = String(questionAnswer)
         }
-
+        
     }
+    func textFieldShouldReturn(textField: UITextField!) -> Bool {
+        if passwords.password == textField.text
+        {
+            performSegueWithIdentifier("toMain", sender: nil)
+            
+        }
+        else{
+            makeAlertView("Password", message: "Password was incorrect", buttonTitle: "Ok")
+        }
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    
     @IBAction func resetPasswordAdmin(sender: AnyObject) {
         passwords.password = ""
         passwords.question = ""
         passwords.questionAnswer = ""
-    print("Test")
+        print("Test")
     }
     
     @IBAction func touchIDButton(sender: AnyObject) {
@@ -51,39 +67,39 @@ class ViewController: UIViewController, UIAlertViewDelegate {
         }
         else
         {
-     performSegueWithIdentifier("toMakePassword", sender: nil)        }
+            performSegueWithIdentifier("toMakePassword", sender: nil)        }
     }
     
     @IBAction func resetPassword(sender: AnyObject) {
         if passwords.password != ""
         {
-        let alertController = UIAlertController(title: "Reset Password", message: passwords.question, preferredStyle: .Alert)
-        
-        let confirmAction = UIAlertAction(title: "Confirm", style: .Default) { (_) in
-            if let field = alertController.textFields![0] as? UITextField {
-                if field.text == self.passwords.questionAnswer
-                {
-                    self.passwords.password = ""
-                    self.makeAlertView("Password", message: "Password was reset. Please make a new one", buttonTitle: "Ok")
-                }
-                else{
-                    self.makeAlertView("Password", message: "Password was incorrect, Please try again", buttonTitle: "OK")
+            let alertController = UIAlertController(title: "Reset Password", message: passwords.question, preferredStyle: .Alert)
+            
+            let confirmAction = UIAlertAction(title: "Confirm", style: .Default) { (_) in
+                if let field = alertController.textFields![0] as? UITextField {
+                    if field.text == self.passwords.questionAnswer
+                    {
+                        self.passwords.password = ""
+                        self.makeAlertView("Password", message: "Password was reset. Please make a new one", buttonTitle: "Ok")
+                    }
+                    else{
+                        self.makeAlertView("Password", message: "Password was incorrect, Please try again", buttonTitle: "OK")
+                    }
                 }
             }
+            
+            let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { (_) in }
+            
+            alertController.addTextFieldWithConfigurationHandler { (textField) in
+                textField.placeholder = "Password"
+            }
+            
+            alertController.addAction(confirmAction)
+            alertController.addAction(cancelAction)
+            
+            self.presentViewController(alertController, animated: true, completion: nil)
+            
         }
-        
-        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { (_) in }
-        
-        alertController.addTextFieldWithConfigurationHandler { (textField) in
-            textField.placeholder = "Password"
-        }
-        
-        alertController.addAction(confirmAction)
-        alertController.addAction(cancelAction)
-        
-        self.presentViewController(alertController, animated: true, completion: nil)
-
-    }
         else{
             makeAlertView("Password", message: "Password does not exist, please make one", buttonTitle: "Ok")
         }
@@ -99,7 +115,10 @@ class ViewController: UIViewController, UIAlertViewDelegate {
             makeAlertView("Password", message: "Password was incorrect", buttonTitle: "Ok")
         }
         
-
+        
+    }
+    @IBAction func onScreenTapped(sender: AnyObject) {
+        textField.resignFirstResponder()
     }
     func makeAlertView(title: String, message: String, buttonTitle: String)
     {
@@ -111,8 +130,8 @@ class ViewController: UIViewController, UIAlertViewDelegate {
     }
     func authenticateUser() {
         let context = LAContext()
-                var error: NSError?
-                var reasonString = "Authentication is needed to access your files."
+        var error: NSError?
+        var reasonString = "Authentication is needed to access your files."
         
         if context.canEvaluatePolicy(LAPolicy.DeviceOwnerAuthenticationWithBiometrics, error: &error) {
             [context .evaluatePolicy(LAPolicy.DeviceOwnerAuthenticationWithBiometrics, localizedReason: reasonString, reply: { (success: Bool, evalPolicyError: NSError?) -> Void in
@@ -122,7 +141,7 @@ class ViewController: UIViewController, UIAlertViewDelegate {
                     
                 }
                 else{
-                                       print(evalPolicyError?.localizedDescription)
+                    print(evalPolicyError?.localizedDescription)
                     
                     switch evalPolicyError!.code {
                         
@@ -171,7 +190,7 @@ class ViewController: UIViewController, UIAlertViewDelegate {
         if buttonIndex == 1 {
             if !alertView.textFieldAtIndex(0)!.text!.isEmpty {
                 if alertView.textFieldAtIndex(0)!.text == passwords.password {
-                    performSegueWithIdentifier("SpicyMeme", sender: nil)
+                    performSegueWithIdentifier("toMakePassword", sender: nil)
                     
                 }
                 else{

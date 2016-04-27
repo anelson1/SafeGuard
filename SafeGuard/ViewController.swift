@@ -3,7 +3,7 @@
 //  Password Tester
 //
 //  Created by Student on 4/5/16.
-//  Copyright © 2016 Dank Memes and Son International Shipping Company Express. All rights reserved.
+//  Copyright © 2016 Dank s and Son International Shipping Company Express. All rights reserved.
 //
 
 import UIKit

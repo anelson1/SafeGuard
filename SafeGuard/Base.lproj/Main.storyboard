@@ -205,7 +205,7 @@
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="60"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GZw-0a-32h">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GZw-0a-32h">
                                 <rect key="frame" x="256" y="402" width="88" height="48"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="30"/>
                                 <state key="normal" title="Save">
@@ -220,6 +220,7 @@
                         <constraints>
                             <constraint firstItem="41q-Sy-X1d" firstAttribute="centerX" secondItem="1OR-nM-ARM" secondAttribute="centerX" id="5eC-Ms-8KI"/>
                             <constraint firstItem="oM9-1V-Zla" firstAttribute="centerX" secondItem="1OR-nM-ARM" secondAttribute="centerX" id="ZkN-xL-lzb"/>
+                            <constraint firstItem="GZw-0a-32h" firstAttribute="centerX" secondItem="1OR-nM-ARM" secondAttribute="centerX" id="hGF-gH-VVU"/>
                         </constraints>
                     </view>
                     <connections>

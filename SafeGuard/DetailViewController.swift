@@ -14,6 +14,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var passwordTextBox: UITextField!
     @IBOutlet weak var passwordTextField: UITextView!
     var data = ClassOfData()
+    var passwords = password()
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "ll")!)
@@ -22,5 +23,9 @@ class DetailViewController: UIViewController {
         passwordTextField.text = data.password
 }
     @IBAction func saveButton(sender: AnyObject) {
+        passwords.password = passwordTextField.text
+        data.password = passwordTextField.text
+        
+        
     }
 }

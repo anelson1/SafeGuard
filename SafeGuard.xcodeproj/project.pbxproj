@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		3F878CF11CBD735100852685 /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F878CF01CBD735100852685 /* LocalAuthentication.framework */; };
-		3FA3E26C1CC54BF9004918C6 /* pictureScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA3E26B1CC54BF9004918C6 /* pictureScreenViewController.swift */; };
 		3FADA2621CBC15A000AF4659 /* NewPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FADA2611CBC15A000AF4659 /* NewPassword.swift */; };
 		3FB2A24A1CD12AA500329884 /* PasswordsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB2A2491CD12AA500329884 /* PasswordsViewController.swift */; };
 		3FB2A24C1CD12ABB00329884 /* ClassOfData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB2A24B1CD12ABB00329884 /* ClassOfData.swift */; };
@@ -42,7 +41,6 @@
 
 /* Begin PBXFileReference section */
 		3F878CF01CBD735100852685 /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
-		3FA3E26B1CC54BF9004918C6 /* pictureScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = pictureScreenViewController.swift; sourceTree = "<group>"; };
 		3FADA2611CBC15A000AF4659 /* NewPassword.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewPassword.swift; sourceTree = "<group>"; };
 		3FB2A2491CD12AA500329884 /* PasswordsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasswordsViewController.swift; sourceTree = "<group>"; };
 		3FB2A24B1CD12ABB00329884 /* ClassOfData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassOfData.swift; sourceTree = "<group>"; };
@@ -115,7 +113,6 @@
 			children = (
 				3FEDED981CBC13F1005C4B56 /* AppDelegate.swift */,
 				3FEDED9A1CBC13F1005C4B56 /* ViewController.swift */,
-				3FA3E26B1CC54BF9004918C6 /* pictureScreenViewController.swift */,
 				3FADA2611CBC15A000AF4659 /* NewPassword.swift */,
 				3FB2A2491CD12AA500329884 /* PasswordsViewController.swift */,
 				3FB2A24B1CD12ABB00329884 /* ClassOfData.swift */,
@@ -287,7 +284,6 @@
 				3FEDED991CBC13F1005C4B56 /* AppDelegate.swift in Sources */,
 				3FEDEDC71CBC163A005C4B56 /* password.swift in Sources */,
 				3FB2A24A1CD12AA500329884 /* PasswordsViewController.swift in Sources */,
-				3FA3E26C1CC54BF9004918C6 /* pictureScreenViewController.swift in Sources */,
 				3FB2A24E1CD24C0300329884 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

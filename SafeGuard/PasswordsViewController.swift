@@ -76,12 +76,12 @@ class PasswordsViewController: UIViewController, UITableViewDataSource, UITableV
         }
     }
     
-    /*override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let dvc = segue.destinationViewController as! detailViewController
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let dvc = segue.destinationViewController as! DetailViewController
         let index = tableView.indexPathForSelectedRow?.row
         dvc.data = data[index!]
         
         
         
-    }*/
+    }
 }

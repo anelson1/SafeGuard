@@ -21,4 +21,6 @@ class DetailViewController: UIViewController {
         passwordTitle.text = data.title
         passwordTextField.text = data.password
 }
+    @IBAction func saveButton(sender: AnyObject) {
+    }
 }

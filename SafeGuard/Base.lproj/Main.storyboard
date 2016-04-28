@@ -28,7 +28,7 @@
                                 <rect key="frame" x="252" y="239" width="84" height="30"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="20"/>
                                 <state key="normal" title="Continue">
-                                    <color key="titleColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
@@ -39,7 +39,7 @@
                                 <rect key="frame" x="129" y="368" width="154" height="35"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="20"/>
                                 <state key="normal" title="Create a Password">
-                                    <color key="titleColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
@@ -50,7 +50,7 @@
                                 <rect key="frame" x="318" y="368" width="162" height="35"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="20"/>
                                 <state key="normal" title="Forgot Password?">
-                                    <color key="titleColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
@@ -70,7 +70,7 @@
                                 <rect key="frame" x="234" y="306" width="120" height="30"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="20"/>
                                 <state key="normal" title="Use TouchID">
-                                    <color key="titleColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
@@ -80,7 +80,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="SafeGuard" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gE0-au-bKF">
                                 <rect key="frame" x="182" y="64" width="225" height="72"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-UltraLightItalic" family="Helvetica Neue" pointSize="50"/>
-                                <color key="textColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -96,13 +96,11 @@
                             <constraint firstItem="f08-PS-ok7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-94" id="qpX-Sy-orR"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="gPW-d8-MkK">
-                        <barButtonItem key="leftBarButtonItem" id="1Fp-9F-dcp"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="gPW-d8-MkK"/>
                     <connections>
                         <outlet property="textField" destination="f93-J4-kTJ" id="Xh9-tN-4im"/>
-                        <segue destination="Jxr-WI-wk0" kind="presentation" identifier="toMakePassword" id="5HJ-L4-UMP"/>
                         <segue destination="XOH-VD-Dpc" kind="show" identifier="toMain" id="f5L-Pd-kMl"/>
+                        <segue destination="nad-KM-ZKZ" kind="presentation" identifier="toMakePassword" id="bzH-8b-b7C"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -204,7 +202,9 @@
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oKB-Ya-f7d">
                                 <rect key="frame" x="247" y="364" width="107" height="30"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
-                                <state key="normal" title="Make Password"/>
+                                <state key="normal" title="Make Password">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="makePassword:" destination="Jxr-WI-wk0" eventType="touchUpInside" id="Ned-l0-PQA"/>
                                 </connections>
@@ -212,7 +212,9 @@
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N3R-0O-Eyc">
                                 <rect key="frame" x="379" y="293" width="95" height="30"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="15"/>
-                                <state key="normal" title="Pick Question"/>
+                                <state key="normal" title="Pick Question">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="pickQuestion:" destination="Jxr-WI-wk0" eventType="touchUpInside" id="JyV-Rg-rDh"/>
                                 </connections>
@@ -220,7 +222,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OmX-HL-9nE">
                                 <rect key="frame" x="278" y="246" width="44" height="21"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="17"/>
-                                <color key="textColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Security Answer" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Cso-sJ-F2y">
@@ -228,18 +230,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cZh-QO-II6">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
-                                <items>
-                                    <navigationItem id="Cyf-kJ-NOR">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="done" id="4PF-B1-KQN">
-                                            <connections>
-                                                <segue destination="BYZ-38-t0r" kind="presentation" id="HXZ-WN-8sn"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -252,7 +242,13 @@
                         </constraints>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" id="tIR-eI-a2L"/>
+                    <navigationItem key="navigationItem" id="tIR-eI-a2L">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="f3B-YR-QXp">
+                            <connections>
+                                <segue destination="BYZ-38-t0r" kind="show" id="xQu-sP-M6D"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="confirmTextField" destination="P27-lj-Dfg" id="0D8-RC-nYH"/>
@@ -263,7 +259,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i8Q-OE-SK0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1832" y="1132"/>
+            <point key="canvasLocation" x="2644" y="1132"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="cfP-iZ-KCH">
@@ -283,8 +279,26 @@
             </objects>
             <point key="canvasLocation" x="1038" y="319"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="dTv-Ml-Jmq">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="nad-KM-ZKZ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="r2f-FH-X4q">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Jxr-WI-wk0" kind="relationship" relationship="rootViewController" id="Gwr-Tz-qer"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cT8-6W-EeK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1832" y="1132"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="HXZ-WN-8sn"/>
+        <segue reference="xQu-sP-M6D"/>
     </inferredMetricsTieBreakers>
 </document>

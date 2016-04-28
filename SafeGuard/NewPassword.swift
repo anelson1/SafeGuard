@@ -20,6 +20,8 @@ class NewPassword: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController!.navigationBar.barTintColor = UIColor.grayColor()
+
         
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "ll")!)
         confirmTextField.delegate = self
@@ -113,13 +115,19 @@ class NewPassword: UIViewController, UITextFieldDelegate {
         textField.resignFirstResponder()
         return true
     }
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let dvc = segue.destinationViewController as! ViewController
-        dvc.passwords = passwords.self
-        
-        
-        
-    }
     
+    @IBAction func onDoneTapped(sender: AnyObject) {
+        dismissViewControllerAnimated(true) { 
+             func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+                let dvc = segue.destinationViewController as! ViewController
+                dvc.passwords = self.passwords.self
+                
+                
+                
+            }
+
+        }
+
+    }
     
 }

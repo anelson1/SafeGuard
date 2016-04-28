@@ -17,7 +17,7 @@ class ViewController: UIViewController, UIAlertViewDelegate, UITextFieldDelegate
     var passwords = password()
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationController!.navigationBar.barTintColor = UIColor.grayColor()
+        //navigationController!.navigationBar.barTintColor = UIColor.grayColor()
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "ll")!)
         textField.delegate = self
         

@@ -113,6 +113,13 @@ class NewPassword: UIViewController, UITextFieldDelegate {
         textField.resignFirstResponder()
         return true
     }
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let dvc = segue.destinationViewController as! ViewController
+        dvc.passwords = passwords.self
+        
+        
+        
+    }
     
     
 }

@@ -15,7 +15,7 @@ class PasswordsViewController: UIViewController, UITableViewDataSource, UITableV
     var data : [ClassOfData] = []
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationController!.navigationBar.barTintColor = UIColor.grayColor()
+        //navigationController!.navigationBar.barTintColor = UIColor.grayColor()
         
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "ll")!)
         
@@ -76,12 +76,12 @@ class PasswordsViewController: UIViewController, UITableViewDataSource, UITableV
         }
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    /*override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         let dvc = segue.destinationViewController as! detailViewController
         let index = tableView.indexPathForSelectedRow?.row
         dvc.data = data[index!]
         
         
         
-    }
+    }*/
 }

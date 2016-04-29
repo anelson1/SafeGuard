@@ -7,11 +7,14 @@
 //
 
 import UIKit
+import RealmSwift
 
-class ClassOfData: NSObject {
+class ClassOfData: Object {
     var title = ""
     var password = ""
     var numberOfStudents = 0
+    let passwordss = List<ClassOfData>()
+
     
     convenience init(title: String, password: String) {
         self.init()

@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F5B65581CD3910A0058FECC /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F5B65561CD3910A0058FECC /* Realm.framework */; };
+		3F5B65591CD3910A0058FECC /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3F5B65561CD3910A0058FECC /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		3F5B655A1CD3910A0058FECC /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F5B65571CD3910A0058FECC /* RealmSwift.framework */; };
+		3F5B655B1CD3910A0058FECC /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3F5B65571CD3910A0058FECC /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3F878CF11CBD735100852685 /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F878CF01CBD735100852685 /* LocalAuthentication.framework */; };
 		3FADA2621CBC15A000AF4659 /* NewPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FADA2611CBC15A000AF4659 /* NewPassword.swift */; };
 		3FB2A24A1CD12AA500329884 /* PasswordsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB2A2491CD12AA500329884 /* PasswordsViewController.swift */; };
@@ -39,7 +43,24 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		3F5B655C1CD3910B0058FECC /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				3F5B655B1CD3910A0058FECC /* RealmSwift.framework in Embed Frameworks */,
+				3F5B65591CD3910A0058FECC /* Realm.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		3F5B65561CD3910A0058FECC /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
+		3F5B65571CD3910A0058FECC /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
 		3F878CF01CBD735100852685 /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
 		3FADA2611CBC15A000AF4659 /* NewPassword.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewPassword.swift; sourceTree = "<group>"; };
 		3FB2A2491CD12AA500329884 /* PasswordsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasswordsViewController.swift; sourceTree = "<group>"; };
@@ -66,7 +87,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F5B65581CD3910A0058FECC /* Realm.framework in Frameworks */,
 				3F878CF11CBD735100852685 /* LocalAuthentication.framework in Frameworks */,
+				3F5B655A1CD3910A0058FECC /* RealmSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,6 +113,8 @@
 		3FEDED8C1CBC13F1005C4B56 = {
 			isa = PBXGroup;
 			children = (
+				3F5B65561CD3910A0058FECC /* Realm.framework */,
+				3F5B65571CD3910A0058FECC /* RealmSwift.framework */,
 				3F878CF01CBD735100852685 /* LocalAuthentication.framework */,
 				3FEDED971CBC13F1005C4B56 /* SafeGuard */,
 				3FEDEDAC1CBC13F2005C4B56 /* SafeGuardTests */,
@@ -154,6 +179,7 @@
 				3FEDED911CBC13F1005C4B56 /* Sources */,
 				3FEDED921CBC13F1005C4B56 /* Frameworks */,
 				3FEDED931CBC13F1005C4B56 /* Resources */,
+				3F5B655C1CD3910B0058FECC /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -428,6 +454,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = SafeGuard/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -440,6 +470,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = SafeGuard/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

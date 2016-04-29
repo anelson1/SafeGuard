@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import RealmSwift
 class DetailViewController: UIViewController {
 
     @IBOutlet weak var passwordTitle: UILabel!
@@ -15,17 +15,28 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextView!
     var data = ClassOfData()
     var passwords = password()
-    override func viewDidLoad() {
+    let realm = try! Realm()
+    var passwordArray = []
+override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "ll")!)
-
-        passwordTitle.text = data.title
-        passwordTextField.text = data.password
-}
-    @IBAction func saveButton(sender: AnyObject) {
-        passwords.password = passwordTextField.text
-        data.password = passwordTextField.text
-        
-        
+    let savedPassword = realm.objects(ClassOfData)
+    dispatch_async(dispatch_queue_create("background", nil)) {
+        let realm = try! Realm()
+        var thePassword = realm.objects(ClassOfData)
+        try! realm.write {
+            
+        }
     }
+
+    }
+    @IBAction func saveButton(sender: AnyObject) {
+        data.password = passwordTextField.text
+        try! realm.write {
+            realm.add(data)
+        }
+        
+    
+    }
+    
 }

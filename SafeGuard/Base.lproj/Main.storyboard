@@ -218,9 +218,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="41q-Sy-X1d" firstAttribute="centerX" secondItem="1OR-nM-ARM" secondAttribute="centerX" id="5eC-Ms-8KI"/>
-                            <constraint firstItem="oM9-1V-Zla" firstAttribute="centerX" secondItem="1OR-nM-ARM" secondAttribute="centerX" id="ZkN-xL-lzb"/>
-                            <constraint firstItem="GZw-0a-32h" firstAttribute="centerX" secondItem="1OR-nM-ARM" secondAttribute="centerX" id="hGF-gH-VVU"/>
+                            <constraint firstItem="41q-Sy-X1d" firstAttribute="centerX" secondItem="1OR-nM-ARM" secondAttribute="centerX" id="KPY-8v-ffE"/>
+                            <constraint firstItem="GZw-0a-32h" firstAttribute="centerX" secondItem="1OR-nM-ARM" secondAttribute="centerX" id="ZHi-qj-0Zy"/>
+                            <constraint firstItem="oM9-1V-Zla" firstAttribute="centerX" secondItem="1OR-nM-ARM" secondAttribute="centerX" id="cY8-oX-7MW"/>
                         </constraints>
                     </view>
                     <connections>

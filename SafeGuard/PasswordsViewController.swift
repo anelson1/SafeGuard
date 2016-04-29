@@ -7,12 +7,15 @@
 //
 
 import UIKit
-
+import RealmSwift
+import Realm
+import Foundation
 class PasswordsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     
     var data : [ClassOfData] = []
+    let savedCell = NSUserDefaults.standardUserDefaults()
     override func viewDidLoad() {
         super.viewDidLoad()
         //navigationController!.navigationBar.barTintColor = UIColor.grayColor()
@@ -20,6 +23,10 @@ class PasswordsViewController: UIViewController, UITableViewDataSource, UITableV
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "ll")!)
         
         data.append(ClassOfData(title: "Test", password: "123"))
+        if let spicymeme = savedCell.stringForKey("Cells"){
+            data.password = anothersavedPassword
+        }
+
         
     }
     override func viewWillAppear(animated: Bool) {
@@ -49,8 +56,9 @@ class PasswordsViewController: UIViewController, UITableViewDataSource, UITableV
         let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
         alert.addAction(cancelAction)
         let addAction = UIAlertAction(title: "Add", style: .Default) { (action) -> Void in
-            let collageTextField = alert.textFields![0] as UITextField
-            self.data.append(ClassOfData(title: collageTextField.text!))
+            let passwordTextField = alert.textFields![0] as UITextField
+            self.data.append(ClassOfData(title: passwordTextField.text!))
+            self.savedCell.setValue(self.data, forKey: "Cells")
             self.tableView.reloadData()
         }
         alert.addAction(addAction)

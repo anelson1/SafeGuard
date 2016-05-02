@@ -15,6 +15,7 @@ class PasswordsViewController: UIViewController, UITableViewDataSource, UITableV
     @IBOutlet weak var tableView: UITableView!
     
     var data : [ClassOfData] = []
+    var dataArray = [String]()
     let savedCell = NSUserDefaults.standardUserDefaults()
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,11 +24,10 @@ class PasswordsViewController: UIViewController, UITableViewDataSource, UITableV
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "ll")!)
         
         data.append(ClassOfData(title: "Test", password: "123"))
-        if let spicymeme = savedCell.stringForKey("Cells"){
-            data.password = anothersavedPassword
+        if let cell = savedCell.valueForKey("SavedCells"){
+            
         }
-
-        
+        print(data.count)
     }
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
@@ -58,7 +58,7 @@ class PasswordsViewController: UIViewController, UITableViewDataSource, UITableV
         let addAction = UIAlertAction(title: "Add", style: .Default) { (action) -> Void in
             let passwordTextField = alert.textFields![0] as UITextField
             self.data.append(ClassOfData(title: passwordTextField.text!))
-            self.savedCell.setValue(self.data, forKey: "Cells")
+            self.savedCell.setValue(self.data, forKey: "SavedCells")
             self.tableView.reloadData()
         }
         alert.addAction(addAction)

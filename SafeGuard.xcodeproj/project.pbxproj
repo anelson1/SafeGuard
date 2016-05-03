@@ -7,9 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3F5B65581CD3910A0058FECC /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F5B65561CD3910A0058FECC /* Realm.framework */; };
 		3F5B65591CD3910A0058FECC /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3F5B65561CD3910A0058FECC /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		3F5B655A1CD3910A0058FECC /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F5B65571CD3910A0058FECC /* RealmSwift.framework */; };
 		3F5B655B1CD3910A0058FECC /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3F5B65571CD3910A0058FECC /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3F878CF11CBD735100852685 /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F878CF01CBD735100852685 /* LocalAuthentication.framework */; };
 		3FADA2621CBC15A000AF4659 /* NewPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FADA2611CBC15A000AF4659 /* NewPassword.swift */; };
@@ -87,9 +85,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3F5B65581CD3910A0058FECC /* Realm.framework in Frameworks */,
 				3F878CF11CBD735100852685 /* LocalAuthentication.framework in Frameworks */,
-				3F5B655A1CD3910A0058FECC /* RealmSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

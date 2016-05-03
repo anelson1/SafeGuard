@@ -7,9 +7,6 @@
 //
 
 import UIKit
-import RealmSwift
-import Realm
-import Foundation
 class DetailViewController: UIViewController {
 
     @IBOutlet weak var passwordTitle: UILabel!

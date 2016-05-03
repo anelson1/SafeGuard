@@ -19,8 +19,6 @@
  */
 
 import UIKit
-import RealmSwift
-import Realm
 import Foundation
 class PasswordsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     

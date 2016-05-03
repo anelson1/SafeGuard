@@ -5,6 +5,18 @@
 //  Created by Student on 1/20/16.
 //  Copyright © 2016 Dank Memes and Son International Shipping Company Express. All rights reserved.
 //
+/*
+ ....................../´¯/)
+ ....................,/¯../
+ .................../..../
+ ............./´¯/'...'/´¯¯`·¸
+ ........../'/.../..../......./¨¯\
+ ........('(...´...´.... ¯~/'...')
+ .........\.................'...../
+ ..........''...\.......... _.·´
+ ............\..............(
+ ..............\.............\...
+ */
 
 import UIKit
 import RealmSwift
@@ -23,11 +35,13 @@ class PasswordsViewController: UIViewController, UITableViewDataSource, UITableV
         
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "ll")!)
         
-        data.append(ClassOfData(title: "Test", password: "123"))
         if let cell = savedCell.valueForKey("SavedCells"){
-            
+            if let passsword = savedCell.valueForKey("Password"){
+            data.append(ClassOfData(title: String(cell), password: String(passsword)))
+
         }
-        print(data.count)
+        }
+               print(data.count)
     }
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
@@ -53,12 +67,20 @@ class PasswordsViewController: UIViewController, UITableViewDataSource, UITableV
         alert.addTextFieldWithConfigurationHandler { (textField) -> Void in
             textField.placeholder = "Add Password Title Here"
         }
+        alert.addTextFieldWithConfigurationHandler { (textField2) -> Void in
+            textField2.placeholder = "Add Password Here"
+        }
+
         let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
         alert.addAction(cancelAction)
         let addAction = UIAlertAction(title: "Add", style: .Default) { (action) -> Void in
             let passwordTextField = alert.textFields![0] as UITextField
-            self.data.append(ClassOfData(title: passwordTextField.text!))
-            self.savedCell.setValue(self.data, forKey: "SavedCells")
+            let otherPasswordTextField = alert.textFields![1] as UITextField
+            self.data.append(ClassOfData(title: passwordTextField.text!, password: otherPasswordTextField.text!))
+            self.dataArray.append(passwordTextField.text!)
+            self.savedCell.setValue(passwordTextField.text, forKey: "SavedCells")
+            self.savedCell.setValue(otherPasswordTextField.text, forKey: "Password")
+            self.savedCell.synchronize()
             self.tableView.reloadData()
         }
         alert.addAction(addAction)

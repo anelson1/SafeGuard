@@ -17,6 +17,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextView!
     var data = ClassOfData()
     var passwords = password()
+    var dataArray = [String]()
     let savedPassword = NSUserDefaults.standardUserDefaults()
     var passwordArray = []
    
@@ -24,11 +25,11 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "ll")!)
             
-            if let anothersavedPassword = savedPassword.stringForKey("RealPassword"){
-                data.password = anothersavedPassword
-            }
+            if var anothersavedPassword = savedPassword.stringForKey("RealPassword"){
+anothersavedPassword = data.password            }
         passwordTextField.text = data.password
             passwordTitle.text = data.title
+            
     }
     @IBAction func saveButton(sender: AnyObject) {
         data.password = passwordTextField.text

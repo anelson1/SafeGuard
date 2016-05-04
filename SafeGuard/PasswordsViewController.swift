@@ -5,28 +5,21 @@
 //  Created by Student on 1/20/16.
 //  Copyright © 2016 Dank Memes and Son International Shipping Company Express. All rights reserved.
 //
-/*
- ....................../´¯/)
- ....................,/¯../
- .................../..../
- ............./´¯/'...'/´¯¯`·¸
- ........../'/.../..../......./¨¯\
- ........('(...´...´.... ¯~/'...')
- .........\.................'...../
- ..........''...\.......... _.·´
- ............\..............(
- ..............\.............\...
- */
+
 
 import UIKit
 import Foundation
+import Realm
+import RealmSwift
 class PasswordsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     
-    var data : [ClassOfData] = []
+    dynamic var data : [ClassOfData] = []
     var dataArray = [String]()
     let savedCell = NSUserDefaults.standardUserDefaults()
+    var passwords: Results<ClassOfData>!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         //navigationController!.navigationBar.barTintColor = UIColor.grayColor()
@@ -79,6 +72,13 @@ class PasswordsViewController: UIViewController, UITableViewDataSource, UITableV
             self.savedCell.setValue(passwordTextField.text, forKey: "SavedCells")
             self.savedCell.setValue(otherPasswordTextField.text, forKey: "Password")
             self.savedCell.synchronize()
+            let realm = try! Realm()
+
+            try! realm.write()
+                {
+                    realm.add(self.data)
+                    
+                    }
             self.tableView.reloadData()
         }
         alert.addAction(addAction)

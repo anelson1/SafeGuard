@@ -226,23 +226,16 @@
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="60"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GZw-0a-32h">
-                                <rect key="frame" x="256" y="402" width="88" height="48"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="30"/>
-                                <state key="normal" title="Save">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="saveButton:" destination="Yda-kF-0fd" eventType="touchUpInside" id="iMy-N7-tRn"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="41q-Sy-X1d" firstAttribute="centerX" secondItem="1OR-nM-ARM" secondAttribute="centerX" id="KPY-8v-ffE"/>
-                            <constraint firstItem="GZw-0a-32h" firstAttribute="centerX" secondItem="1OR-nM-ARM" secondAttribute="centerX" id="ZHi-qj-0Zy"/>
                             <constraint firstItem="oM9-1V-Zla" firstAttribute="centerX" secondItem="1OR-nM-ARM" secondAttribute="centerX" id="cY8-oX-7MW"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="IS0-Ha-hYV" appends="YES" id="jzf-Vy-zZD"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="passwordTextField" destination="oM9-1V-Zla" id="0MD-Og-1N3"/>
@@ -250,6 +243,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dyK-fX-t8n" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="IS0-Ha-hYV">
+                    <connections>
+                        <action selector="onScreenTapped:" destination="Yda-kF-0fd" id="4vL-hq-bYT"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="3702" y="302"/>
         </scene>

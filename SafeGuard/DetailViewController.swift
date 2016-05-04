@@ -30,6 +30,9 @@ anothersavedPassword = data.password            }
             passwordTitle.text = data.title
             
     }
+    @IBAction func onScreenTapped(sender: AnyObject) {
+        passwordTextField.resignFirstResponder()
+    }
     @IBAction func saveButton(sender: AnyObject) {
         data.password = passwordTextField.text
         savedPassword.setValue(data.password, forKey: "RealPassword")

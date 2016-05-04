@@ -12,17 +12,21 @@ import LocalAuthentication
 
 class ViewController: UIViewController, UIAlertViewDelegate, UITextFieldDelegate {
     @IBOutlet weak var textField: UITextField!
+    @IBOutlet weak var forgotPassButton: UIButton!
+    @IBOutlet weak var createAPassButton: UIButton!
+    @IBOutlet weak var activityIndicatiorView: UIActivityIndicatorView!
     let myDefaults = NSUserDefaults.standardUserDefaults()
     let passwordstorage = "passwordstorage"
     var passwords = password()
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.navigationItem.setHidesBackButton(true, animated:true)
         navigationController!.navigationBar.barTintColor = UIColor.grayColor()
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "ll")!)
         textField.delegate = self
-        
-        
+        forgotPassButton.setTitle("Forgot Password?", forState: UIControlState.Normal)
+        forgotPassButton.titleLabel?.numberOfLines = 0
         if let password1 = myDefaults.objectForKey("passwordstorage")
         {
             passwords.password = String(password1)
@@ -35,9 +39,21 @@ class ViewController: UIViewController, UIAlertViewDelegate, UITextFieldDelegate
         {
             passwords.questionAnswer = String(questionAnswer)
         }
+        if passwords.password == ""
+        {
+            let alert = UIAlertController(title: "Welcome", message: "Welcome to safeguard, Please make a password", preferredStyle: .Alert)
+            
+            let alertaction = UIAlertAction(title: "Ok", style: .Default, handler: { (ACTION) in
+                self.performSegueWithIdentifier("toMakePassword", sender: nil)
+            })
+            alert.addAction(alertaction)
+            presentViewController(alert, animated: true, completion: nil)
+        }
         
     }
     func textFieldShouldReturn(textField: UITextField!) -> Bool {
+        textField.resignFirstResponder()
+
         if passwords.password == textField.text
         {
             performSegueWithIdentifier("toMain", sender: nil)
@@ -46,7 +62,6 @@ class ViewController: UIViewController, UIAlertViewDelegate, UITextFieldDelegate
         else{
             makeAlertView("Password", message: "Password was incorrect", buttonTitle: "Ok")
         }
-        textField.resignFirstResponder()
         return true
     }
     
@@ -59,6 +74,8 @@ class ViewController: UIViewController, UIAlertViewDelegate, UITextFieldDelegate
     }
     
     @IBAction func touchIDButton(sender: AnyObject) {
+        activityIndicatiorView.startAnimating()
+
         authenticateUser()
     }
     @IBAction func makePassword(sender: AnyObject) {
@@ -107,13 +124,16 @@ class ViewController: UIViewController, UIAlertViewDelegate, UITextFieldDelegate
     }
     
     @IBAction func continueButton(sender: AnyObject) {
-        if passwords.password == textField.text
+        if passwords.password == textField.text && textField.text != ""
         {
             performSegueWithIdentifier("toMain", sender: nil)
             
         }
-        else{
+        else if passwords.password != textField.text{
             makeAlertView("Password", message: "Password was incorrect", buttonTitle: "Ok")
+        }
+        else{
+            makeAlertView("Password", message: "No Password Was Entered, Please Enter A Password", buttonTitle: "Ok")
         }
         
         
@@ -121,6 +141,7 @@ class ViewController: UIViewController, UIAlertViewDelegate, UITextFieldDelegate
     @IBAction func onScreenTapped(sender: AnyObject) {
         textField.resignFirstResponder()
     }
+    
     func makeAlertView(title: String, message: String, buttonTitle: String)
     {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .Alert)
@@ -136,12 +157,13 @@ class ViewController: UIViewController, UIAlertViewDelegate, UITextFieldDelegate
         
         if context.canEvaluatePolicy(LAPolicy.DeviceOwnerAuthenticationWithBiometrics, error: &error) {
             [context .evaluatePolicy(LAPolicy.DeviceOwnerAuthenticationWithBiometrics, localizedReason: reasonString, reply: { (success: Bool, evalPolicyError: NSError?) -> Void in
-                
+
                 if success {
                     self.performSegueWithIdentifier("toMain", sender: nil)
                     
                 }
                 else{
+                    self.activityIndicatiorView.stopAnimating()
                     print(evalPolicyError?.localizedDescription)
                     
                     switch evalPolicyError!.code {
@@ -176,9 +198,6 @@ class ViewController: UIViewController, UIAlertViewDelegate, UITextFieldDelegate
             default:
                 print("TouchID not available")
             }
-            
-            print(error?.localizedDescription)
-            
             self.showPasswordAlert()
         }
     }

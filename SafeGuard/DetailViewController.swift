@@ -12,6 +12,8 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var passwordTitle: UILabel!
     @IBOutlet weak var passwordTextBox: UITextField!
     @IBOutlet weak var passwordTextField: UITextView!
+    
+    
     var data = ClassOfData()
     var passwords = password()
     var dataArray = [String]()

@@ -42,6 +42,7 @@ class PasswordsViewController: UIViewController, UITableViewDataSource, UITableV
         return data.count
     }
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCellWithIdentifier("myCell", forIndexPath: indexPath)
         cell.textLabel?.text = data[indexPath.row].title
         return cell
@@ -79,6 +80,7 @@ class PasswordsViewController: UIViewController, UITableViewDataSource, UITableV
                     realm.add(self.data)
                     
                     }
+            self.passwords = realm.objects(ClassOfData)
             self.tableView.reloadData()
         }
         alert.addAction(addAction)

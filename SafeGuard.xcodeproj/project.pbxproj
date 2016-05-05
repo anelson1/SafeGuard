@@ -14,6 +14,9 @@
 		3FB2A24A1CD12AA500329884 /* PasswordsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB2A2491CD12AA500329884 /* PasswordsViewController.swift */; };
 		3FB2A24C1CD12ABB00329884 /* ClassOfData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB2A24B1CD12ABB00329884 /* ClassOfData.swift */; };
 		3FB2A24E1CD24C0300329884 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB2A24D1CD24C0300329884 /* DetailViewController.swift */; };
+		3FCAD6531CDBA1BA004FBA16 /* NoteTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCAD6521CDBA1BA004FBA16 /* NoteTableViewController.swift */; };
+		3FCAD6551CDBA230004FBA16 /* NoteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCAD6541CDBA230004FBA16 /* NoteTableViewCell.swift */; };
+		3FCAD6581CDBB789004FBA16 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCAD6571CDBB789004FBA16 /* Note.swift */; };
 		3FEDED991CBC13F1005C4B56 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEDED981CBC13F1005C4B56 /* AppDelegate.swift */; };
 		3FEDED9B1CBC13F1005C4B56 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEDED9A1CBC13F1005C4B56 /* ViewController.swift */; };
 		3FEDED9E1CBC13F2005C4B56 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FEDED9C1CBC13F2005C4B56 /* Main.storyboard */; };
@@ -64,6 +67,9 @@
 		3FB2A2491CD12AA500329884 /* PasswordsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasswordsViewController.swift; sourceTree = "<group>"; };
 		3FB2A24B1CD12ABB00329884 /* ClassOfData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassOfData.swift; sourceTree = "<group>"; };
 		3FB2A24D1CD24C0300329884 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		3FCAD6521CDBA1BA004FBA16 /* NoteTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteTableViewController.swift; sourceTree = "<group>"; };
+		3FCAD6541CDBA230004FBA16 /* NoteTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteTableViewCell.swift; sourceTree = "<group>"; };
+		3FCAD6571CDBB789004FBA16 /* Note.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		3FEDED951CBC13F1005C4B56 /* SafeGuard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SafeGuard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FEDED981CBC13F1005C4B56 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3FEDED9A1CBC13F1005C4B56 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -138,6 +144,9 @@
 				3FB2A2491CD12AA500329884 /* PasswordsViewController.swift */,
 				3FB2A24B1CD12ABB00329884 /* ClassOfData.swift */,
 				3FEDED9C1CBC13F2005C4B56 /* Main.storyboard */,
+				3FCAD6571CDBB789004FBA16 /* Note.swift */,
+				3FCAD6541CDBA230004FBA16 /* NoteTableViewCell.swift */,
+				3FCAD6521CDBA1BA004FBA16 /* NoteTableViewController.swift */,
 				3FB2A24D1CD24C0300329884 /* DetailViewController.swift */,
 				3FEDEDC61CBC163A005C4B56 /* password.swift */,
 				3FEDED9F1CBC13F2005C4B56 /* Assets.xcassets */,
@@ -305,6 +314,9 @@
 				3FADA2621CBC15A000AF4659 /* NewPassword.swift in Sources */,
 				3FEDED991CBC13F1005C4B56 /* AppDelegate.swift in Sources */,
 				3FEDEDC71CBC163A005C4B56 /* password.swift in Sources */,
+				3FCAD6581CDBB789004FBA16 /* Note.swift in Sources */,
+				3FCAD6551CDBA230004FBA16 /* NoteTableViewCell.swift in Sources */,
+				3FCAD6531CDBA1BA004FBA16 /* NoteTableViewController.swift in Sources */,
 				3FB2A24A1CD12AA500329884 /* PasswordsViewController.swift in Sources */,
 				3FB2A24E1CD24C0300329884 /* DetailViewController.swift in Sources */,
 			);

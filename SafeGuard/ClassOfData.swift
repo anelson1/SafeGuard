@@ -10,7 +10,7 @@ import UIKit
 import Foundation
 import RealmSwift
 
-class ClassOfData: Object {
+class ClassOfData: NSObject {
     var title = ""
     var password = ""
 

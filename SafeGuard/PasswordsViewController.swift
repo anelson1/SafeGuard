@@ -14,11 +14,12 @@ import RealmSwift
 class PasswordsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var passwordTitleLabel: UILabel!
+    @IBOutlet weak var passwordLabel: UILabel!
     
     dynamic var data : [ClassOfData] = []
     var dataArray = [String]()
     let savedCell = NSUserDefaults.standardUserDefaults()
-    var passwords: Results<ClassOfData>!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,19 +69,13 @@ class PasswordsViewController: UIViewController, UITableViewDataSource, UITableV
         let addAction = UIAlertAction(title: "Add", style: .Default) { (action) -> Void in
             let passwordTextField = alert.textFields![0] as UITextField
             let otherPasswordTextField = alert.textFields![1] as UITextField
+           
             self.data.append(ClassOfData(title: passwordTextField.text!, password: otherPasswordTextField.text!))
             self.dataArray.append(passwordTextField.text!)
             self.savedCell.setValue(passwordTextField.text, forKey: "SavedCells")
             self.savedCell.setValue(otherPasswordTextField.text, forKey: "Password")
             self.savedCell.synchronize()
-            let realm = try! Realm()
-
-            try! realm.write()
-                {
-                    realm.add(self.data)
-                    
-                    }
-            self.passwords = realm.objects(ClassOfData)
+            
             self.tableView.reloadData()
         }
         alert.addAction(addAction)

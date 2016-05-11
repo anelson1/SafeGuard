@@ -7,16 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3F5B65591CD3910A0058FECC /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3F5B65561CD3910A0058FECC /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		3F5B655B1CD3910A0058FECC /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3F5B65571CD3910A0058FECC /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		3F878CF11CBD735100852685 /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F878CF01CBD735100852685 /* LocalAuthentication.framework */; };
+		3F5941C31CE0FAA0001E4562 /* NoteDisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5941C21CE0FAA0001E4562 /* NoteDisplayViewController.swift */; };
+		3F5941C71CE38821001E4562 /* StyleConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5941C61CE38821001E4562 /* StyleConstants.swift */; };
 		3FADA2621CBC15A000AF4659 /* NewPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FADA2611CBC15A000AF4659 /* NewPassword.swift */; };
 		3FB2A24A1CD12AA500329884 /* PasswordsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB2A2491CD12AA500329884 /* PasswordsViewController.swift */; };
 		3FB2A24C1CD12ABB00329884 /* ClassOfData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB2A24B1CD12ABB00329884 /* ClassOfData.swift */; };
 		3FB2A24E1CD24C0300329884 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB2A24D1CD24C0300329884 /* DetailViewController.swift */; };
-		3FCAD6531CDBA1BA004FBA16 /* NoteTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCAD6521CDBA1BA004FBA16 /* NoteTableViewController.swift */; };
-		3FCAD6551CDBA230004FBA16 /* NoteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCAD6541CDBA230004FBA16 /* NoteTableViewCell.swift */; };
-		3FCAD6581CDBB789004FBA16 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCAD6571CDBB789004FBA16 /* Note.swift */; };
+		3FCAD6551CDBA230004FBA16 /* PassTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCAD6541CDBA230004FBA16 /* PassTableViewCell.swift */; };
+		3FCAD6581CDBB789004FBA16 /* passwordClassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCAD6571CDBB789004FBA16 /* passwordClassword.swift */; };
+		3FCAD65B1CDCCBF0004FBA16 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FCAD6591CDCCBF0004FBA16 /* Realm.framework */; };
+		3FCAD65C1CDCCBF0004FBA16 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3FCAD6591CDCCBF0004FBA16 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		3FCAD65D1CDCCBF0004FBA16 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FCAD65A1CDCCBF0004FBA16 /* RealmSwift.framework */; };
+		3FCAD65E1CDCCBF0004FBA16 /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3FCAD65A1CDCCBF0004FBA16 /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		3FCAD6601CDCCDEB004FBA16 /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F878CF01CBD735100852685 /* LocalAuthentication.framework */; };
+		3FCAD6641CDCD249004FBA16 /* PasswordTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCAD6631CDCD249004FBA16 /* PasswordTableViewCell.swift */; };
+		3FCAD6661CDCE72F004FBA16 /* PassTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCAD6651CDCE72F004FBA16 /* PassTableViewController.swift */; };
+		3FCAD6681CDD08A3004FBA16 /* NewNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCAD6671CDD08A3004FBA16 /* NewNoteViewController.swift */; };
 		3FEDED991CBC13F1005C4B56 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEDED981CBC13F1005C4B56 /* AppDelegate.swift */; };
 		3FEDED9B1CBC13F1005C4B56 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEDED9A1CBC13F1005C4B56 /* ViewController.swift */; };
 		3FEDED9E1CBC13F2005C4B56 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FEDED9C1CBC13F2005C4B56 /* Main.storyboard */; };
@@ -45,14 +51,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		3F5B655C1CD3910B0058FECC /* Embed Frameworks */ = {
+		3FCAD65F1CDCCBF0004FBA16 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				3F5B655B1CD3910A0058FECC /* RealmSwift.framework in Embed Frameworks */,
-				3F5B65591CD3910A0058FECC /* Realm.framework in Embed Frameworks */,
+				3FCAD65E1CDCCBF0004FBA16 /* RealmSwift.framework in Embed Frameworks */,
+				3FCAD65C1CDCCBF0004FBA16 /* Realm.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -60,16 +66,20 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		3F5B65561CD3910A0058FECC /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
-		3F5B65571CD3910A0058FECC /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
+		3F5941C21CE0FAA0001E4562 /* NoteDisplayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteDisplayViewController.swift; sourceTree = "<group>"; };
+		3F5941C61CE38821001E4562 /* StyleConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyleConstants.swift; sourceTree = "<group>"; };
 		3F878CF01CBD735100852685 /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
 		3FADA2611CBC15A000AF4659 /* NewPassword.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewPassword.swift; sourceTree = "<group>"; };
 		3FB2A2491CD12AA500329884 /* PasswordsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasswordsViewController.swift; sourceTree = "<group>"; };
 		3FB2A24B1CD12ABB00329884 /* ClassOfData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassOfData.swift; sourceTree = "<group>"; };
 		3FB2A24D1CD24C0300329884 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
-		3FCAD6521CDBA1BA004FBA16 /* NoteTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteTableViewController.swift; sourceTree = "<group>"; };
-		3FCAD6541CDBA230004FBA16 /* NoteTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteTableViewCell.swift; sourceTree = "<group>"; };
-		3FCAD6571CDBB789004FBA16 /* Note.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
+		3FCAD6541CDBA230004FBA16 /* PassTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PassTableViewCell.swift; sourceTree = "<group>"; };
+		3FCAD6571CDBB789004FBA16 /* passwordClassword.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = passwordClassword.swift; sourceTree = "<group>"; };
+		3FCAD6591CDCCBF0004FBA16 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
+		3FCAD65A1CDCCBF0004FBA16 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
+		3FCAD6631CDCD249004FBA16 /* PasswordTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasswordTableViewCell.swift; sourceTree = "<group>"; };
+		3FCAD6651CDCE72F004FBA16 /* PassTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PassTableViewController.swift; path = ../PassTableViewController.swift; sourceTree = "<group>"; };
+		3FCAD6671CDD08A3004FBA16 /* NewNoteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewNoteViewController.swift; sourceTree = "<group>"; };
 		3FEDED951CBC13F1005C4B56 /* SafeGuard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SafeGuard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FEDED981CBC13F1005C4B56 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3FEDED9A1CBC13F1005C4B56 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -91,7 +101,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3F878CF11CBD735100852685 /* LocalAuthentication.framework in Frameworks */,
+				3FCAD6601CDCCDEB004FBA16 /* LocalAuthentication.framework in Frameworks */,
+				3FCAD65B1CDCCBF0004FBA16 /* Realm.framework in Frameworks */,
+				3FCAD65D1CDCCBF0004FBA16 /* RealmSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -115,8 +127,8 @@
 		3FEDED8C1CBC13F1005C4B56 = {
 			isa = PBXGroup;
 			children = (
-				3F5B65561CD3910A0058FECC /* Realm.framework */,
-				3F5B65571CD3910A0058FECC /* RealmSwift.framework */,
+				3FCAD6591CDCCBF0004FBA16 /* Realm.framework */,
+				3FCAD65A1CDCCBF0004FBA16 /* RealmSwift.framework */,
 				3F878CF01CBD735100852685 /* LocalAuthentication.framework */,
 				3FEDED971CBC13F1005C4B56 /* SafeGuard */,
 				3FEDEDAC1CBC13F2005C4B56 /* SafeGuardTests */,
@@ -139,14 +151,18 @@
 			isa = PBXGroup;
 			children = (
 				3FEDED981CBC13F1005C4B56 /* AppDelegate.swift */,
+				3F5941C61CE38821001E4562 /* StyleConstants.swift */,
 				3FEDED9A1CBC13F1005C4B56 /* ViewController.swift */,
 				3FADA2611CBC15A000AF4659 /* NewPassword.swift */,
 				3FB2A2491CD12AA500329884 /* PasswordsViewController.swift */,
 				3FB2A24B1CD12ABB00329884 /* ClassOfData.swift */,
 				3FEDED9C1CBC13F2005C4B56 /* Main.storyboard */,
-				3FCAD6571CDBB789004FBA16 /* Note.swift */,
-				3FCAD6541CDBA230004FBA16 /* NoteTableViewCell.swift */,
-				3FCAD6521CDBA1BA004FBA16 /* NoteTableViewController.swift */,
+				3F5941C21CE0FAA0001E4562 /* NoteDisplayViewController.swift */,
+				3FCAD6631CDCD249004FBA16 /* PasswordTableViewCell.swift */,
+				3FCAD6571CDBB789004FBA16 /* passwordClassword.swift */,
+				3FCAD6541CDBA230004FBA16 /* PassTableViewCell.swift */,
+				3FCAD6651CDCE72F004FBA16 /* PassTableViewController.swift */,
+				3FCAD6671CDD08A3004FBA16 /* NewNoteViewController.swift */,
 				3FB2A24D1CD24C0300329884 /* DetailViewController.swift */,
 				3FEDEDC61CBC163A005C4B56 /* password.swift */,
 				3FEDED9F1CBC13F2005C4B56 /* Assets.xcassets */,
@@ -184,7 +200,7 @@
 				3FEDED911CBC13F1005C4B56 /* Sources */,
 				3FEDED921CBC13F1005C4B56 /* Frameworks */,
 				3FEDED931CBC13F1005C4B56 /* Resources */,
-				3F5B655C1CD3910B0058FECC /* Embed Frameworks */,
+				3FCAD65F1CDCCBF0004FBA16 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -309,15 +325,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3FCAD6641CDCD249004FBA16 /* PasswordTableViewCell.swift in Sources */,
+				3F5941C71CE38821001E4562 /* StyleConstants.swift in Sources */,
 				3FEDED9B1CBC13F1005C4B56 /* ViewController.swift in Sources */,
 				3FB2A24C1CD12ABB00329884 /* ClassOfData.swift in Sources */,
 				3FADA2621CBC15A000AF4659 /* NewPassword.swift in Sources */,
 				3FEDED991CBC13F1005C4B56 /* AppDelegate.swift in Sources */,
+				3FCAD6681CDD08A3004FBA16 /* NewNoteViewController.swift in Sources */,
 				3FEDEDC71CBC163A005C4B56 /* password.swift in Sources */,
-				3FCAD6581CDBB789004FBA16 /* Note.swift in Sources */,
-				3FCAD6551CDBA230004FBA16 /* NoteTableViewCell.swift in Sources */,
-				3FCAD6531CDBA1BA004FBA16 /* NoteTableViewController.swift in Sources */,
+				3F5941C31CE0FAA0001E4562 /* NoteDisplayViewController.swift in Sources */,
+				3FCAD6581CDBB789004FBA16 /* passwordClassword.swift in Sources */,
+				3FCAD6551CDBA230004FBA16 /* PassTableViewCell.swift in Sources */,
 				3FB2A24A1CD12AA500329884 /* PasswordsViewController.swift in Sources */,
+				3FCAD6661CDCE72F004FBA16 /* PassTableViewController.swift in Sources */,
 				3FB2A24E1CD24C0300329884 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -467,7 +487,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = SafeGuard/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "A-Weapon-To-Surpass-Metal-Gear.SafeGuard";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -483,7 +503,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = SafeGuard/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "A-Weapon-To-Surpass-Metal-Gear.SafeGuard";
 				PRODUCT_NAME = "$(TARGET_NAME)";

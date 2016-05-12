@@ -51,7 +51,7 @@ class NewPassword: UIViewController, UITextFieldDelegate {
             
         }
         
-        let alertAction3 = UIAlertAction(title: "Favorite Teacher?", style: .Default) { (ACTION) in
+        let alertAction3 = UIAlertAction(title: "Favorite meme?", style: .Default) { (ACTION) in
             self.question.text = "Favorite Teacher"
             self.passwords.question = "Favorite Teacher?"
             
@@ -104,7 +104,7 @@ class NewPassword: UIViewController, UITextFieldDelegate {
             presentViewController(alert, animated: true, completion: nil)
         }
         else{
-            let alert = UIAlertController(title: "Password Confirm", message: "Your passwords did not match", preferredStyle: .Alert)
+            let alert = UIAlertController(title: "Password meme", message: "Your passwords did not match", preferredStyle: .Alert)
             let alertaction = UIAlertAction(title: "OK", style: .Default, handler: nil)
             alert.addAction(alertaction)
             presentViewController(alert, animated: true, completion: nil)

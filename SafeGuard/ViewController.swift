@@ -169,16 +169,22 @@ class ViewController: UIViewController, UIAlertViewDelegate, UITextFieldDelegate
                         
                     case LAError.SystemCancel.rawValue:
                         print("Authentication was cancelled by the system")
+                        self.activityIndicatiorView.stopAnimating()
+
                         
                     case LAError.UserCancel.rawValue:
                         print("Authentication was cancelled by the user")
+                        self.activityIndicatiorView.stopAnimating()
+
                         
                     case LAError.UserFallback.rawValue:
+                        self.activityIndicatiorView.stopAnimating()
                         print("User selected to enter custom password")
                         self.showPasswordAlert()
                         
                     default:
                         print("Authentication failed")
+                        self.activityIndicatiorView.stopAnimating()
                         self.showPasswordAlert()
                     }
                 }
@@ -190,12 +196,17 @@ class ViewController: UIViewController, UIAlertViewDelegate, UITextFieldDelegate
                 
             case LAError.TouchIDNotEnrolled.rawValue:
                 print("TouchID is not enrolled")
-                
+                self.activityIndicatiorView.stopAnimating()
+
             case LAError.PasscodeNotSet.rawValue:
                 print("A passcode has not been set")
+                self.activityIndicatiorView.stopAnimating()
+
                 
             default:
                 print("TouchID not available")
+                self.activityIndicatiorView.stopAnimating()
+
             }
             self.showPasswordAlert()
         }

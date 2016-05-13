@@ -22,7 +22,7 @@ class ViewController: UIViewController, UIAlertViewDelegate, UITextFieldDelegate
         super.viewDidLoad()
         
         self.navigationItem.setHidesBackButton(true, animated:true)
-        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "ll")!)
+        //self.view.backgroundColor = UIColor(patternImage: UIImage(named: "ll")!)
         textField.delegate = self
         forgotPassButton.setTitle("Forgot Password?", forState: UIControlState.Normal)
         forgotPassButton.titleLabel?.numberOfLines = 0

@@ -20,10 +20,6 @@ class NewPassword: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationController!.navigationBar.barTintColor = UIColor.grayColor()
-
-        
-        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "ll")!)
         confirmTextField.delegate = self
         enterTextField.delegate = self
         questionField.delegate = self
@@ -87,6 +83,7 @@ class NewPassword: UIViewController, UITextFieldDelegate {
             let alertaction = UIAlertAction(title: "OK", style: .Default, handler: nil)
             alert.addAction(alertaction)
             presentViewController(alert, animated: true, completion: nil)
+            
             
         }
         else if questionField.text == ""

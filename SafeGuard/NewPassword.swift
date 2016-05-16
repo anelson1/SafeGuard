@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import iAd
 
-class NewPassword: UIViewController, UITextFieldDelegate {
+class NewPassword: UIViewController, UITextFieldDelegate,ADBannerViewDelegate {
     
     
     @IBOutlet weak var question: UILabel!
@@ -17,8 +18,17 @@ class NewPassword: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var enterTextField: UITextField!
     var passwords = password()
     let myDefaults = NSUserDefaults.standardUserDefaults()
-    
+    var bannerView : ADBannerView!
     override func viewDidLoad() {
+        bannerView = ADBannerView(adType: .Banner)
+        bannerView.translatesAutoresizingMaskIntoConstraints = false
+        bannerView.delegate = self
+        bannerView.hidden = true
+        view.addSubview(bannerView)
+        
+        let viewsDictionary = ["bannerView": bannerView]
+        view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|[bannerView]|", options: [], metrics: nil, views: viewsDictionary))
+        view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:[bannerView]|", options: [], metrics: nil, views: viewsDictionary))
         super.viewDidLoad()
         confirmTextField.delegate = self
         enterTextField.delegate = self
@@ -126,5 +136,11 @@ class NewPassword: UIViewController, UITextFieldDelegate {
         }
 
     }
+    func bannerViewDidLoadAd(banner: ADBannerView!) {
+        bannerView.hidden = false
+    }
     
+    func bannerView(banner: ADBannerView!, didFailToReceiveAdWithError error: NSError!) {
+        bannerView.hidden = true
+    }
 }

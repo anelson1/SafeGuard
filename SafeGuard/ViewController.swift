@@ -11,7 +11,7 @@ import LocalAuthentication
 import iAd
 
 
-class ViewController: UIViewController, UIAlertViewDelegate, UITextFieldDelegate {
+class ViewController: UIViewController, UIAlertViewDelegate, UITextFieldDelegate,ADBannerViewDelegate {
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var forgotPassButton: UIButton!
     @IBOutlet weak var createAPassButton: UIButton!
@@ -19,9 +19,20 @@ class ViewController: UIViewController, UIAlertViewDelegate, UITextFieldDelegate
     let myDefaults = NSUserDefaults.standardUserDefaults()
     let passwordstorage = "passwordstorage"
     var passwords = password()
+    var bannerView: ADBannerView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.canDisplayBannerAds = true
+        
+        bannerView = ADBannerView(adType: .Banner)
+        bannerView.translatesAutoresizingMaskIntoConstraints = false
+        bannerView.delegate = self
+        bannerView.hidden = true
+        view.addSubview(bannerView)
+        
+        let viewsDictionary = ["bannerView": bannerView]
+        view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|[bannerView]|", options: [], metrics: nil, views: viewsDictionary))
+        view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:[bannerView]|", options: [], metrics: nil, views: viewsDictionary))
         self.navigationItem.setHidesBackButton(true, animated:true)
         //self.view.backgroundColor = UIColor(patternImage: UIImage(named: "ll")!)
         textField.delegate = self
@@ -229,7 +240,13 @@ class ViewController: UIViewController, UIAlertViewDelegate, UITextFieldDelegate
             }
         }
     }
+    func bannerViewDidLoadAd(banner: ADBannerView!) {
+        bannerView.hidden = false
+    }
     
+    func bannerView(banner: ADBannerView!, didFailToReceiveAdWithError error: NSError!) {
+        bannerView.hidden = true
+    }
     }
 
 

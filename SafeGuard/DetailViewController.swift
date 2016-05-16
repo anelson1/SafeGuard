@@ -1,11 +1,3 @@
-//
-//  DetailViewController.swift
-//  SafeGuard
-//
-//  Created by Student on 4/28/16.
-//  Copyright © 2016 Dank Memes and Son International Shipping Company Express. All rights reserved.
-//
-
 import UIKit
 class DetailViewController: UIViewController {
 

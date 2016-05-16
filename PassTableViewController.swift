@@ -1,27 +1,30 @@
-//
-//  PassTableViewController.swift
-//  SafeGuard
-//
-//  Created by Student on 5/6/16.
-//  Copyright © 2016 Dank Memes and Son International Shipping Company Express. All rights reserved.
-//
-
 import UIKit
 import RealmSwift
 import Foundation
-
-class PassTableViewController: UITableViewController {
+import iAd
+class PassTableViewController: UITableViewController,ADBannerViewDelegate {
     var passwords: Results<passwordClassword>! {
         didSet {
             // Whenever notes update, update the table view
             tableView?.reloadData()
         }
     }
+    var bannerView: ADBannerView!
+
     var meme: passwordClassword?
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
+        bannerView = ADBannerView(adType: .Banner)
+        bannerView.translatesAutoresizingMaskIntoConstraints = false
+        bannerView.delegate = self
+        bannerView.hidden = true
+        view.addSubview(bannerView)
+        
+        let viewsDictionary = ["bannerView": bannerView]
+        view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|[bannerView]|", options: [], metrics: nil, views: viewsDictionary))
+        view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:[bannerView]|", options: [], metrics: nil, views: viewsDictionary))
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -109,6 +112,12 @@ extension PassTableViewController {
             }
         }
     }
+    func bannerViewDidLoadAd(banner: ADBannerView!) {
+        bannerView.hidden = false
+    }
     
+    func bannerView(banner: ADBannerView!, didFailToReceiveAdWithError error: NSError!) {
+        bannerView.hidden = true
+    }
 }
     

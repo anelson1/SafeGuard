@@ -110,15 +110,11 @@
                                     <action selector="resetPasswordAdmin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3RA-dI-T2W"/>
                                 </connections>
                             </button>
-                            <adBannerView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="WZi-Bq-l29">
-                                <rect key="frame" x="60" y="568" width="480" height="32"/>
-                            </adBannerView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="fc4-hg-9HS" firstAttribute="centerX" secondItem="f93-J4-kTJ" secondAttribute="centerX" id="0uo-KH-TQx"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="WZi-Bq-l29" secondAttribute="bottom" constant="-34" id="1pP-PM-Qq7"/>
                             <constraint firstItem="YMe-qP-Jdy" firstAttribute="top" secondItem="f93-J4-kTJ" secondAttribute="bottom" constant="32" id="9yc-bU-3fV"/>
                             <constraint firstItem="f93-J4-kTJ" firstAttribute="top" secondItem="gE0-au-bKF" secondAttribute="bottom" constant="14" id="AHZ-yh-En4"/>
                             <constraint firstItem="i5j-I0-8YI" firstAttribute="top" secondItem="2NH-9S-r19" secondAttribute="top" id="BiJ-ii-898"/>
@@ -133,7 +129,6 @@
                             <constraint firstItem="gE0-au-bKF" firstAttribute="centerX" secondItem="fc4-hg-9HS" secondAttribute="centerX" id="Rgi-OG-m1z"/>
                             <constraint firstItem="YMe-qP-Jdy" firstAttribute="top" secondItem="fc4-hg-9HS" secondAttribute="bottom" constant="60" id="W07-Gs-PkU"/>
                             <constraint firstItem="i5j-I0-8YI" firstAttribute="trailing" secondItem="f08-PS-ok7" secondAttribute="trailing" id="cDx-6c-hmk"/>
-                            <constraint firstItem="XJj-Ly-caM" firstAttribute="centerX" secondItem="WZi-Bq-l29" secondAttribute="centerX" id="cr5-su-KMX"/>
                             <constraint firstItem="gE0-au-bKF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="kbQ-XD-12E"/>
                             <constraint firstItem="2NH-9S-r19" firstAttribute="top" secondItem="f93-J4-kTJ" secondAttribute="bottom" constant="79" id="ld8-Mc-ICK"/>
                             <constraint firstItem="YMe-qP-Jdy" firstAttribute="centerX" secondItem="i5j-I0-8YI" secondAttribute="centerX" id="mPI-1N-5cV"/>
@@ -374,9 +369,6 @@
                                     <action selector="pickQuestion:" destination="Jxr-WI-wk0" eventType="touchUpInside" id="JyV-Rg-rDh"/>
                                 </connections>
                             </button>
-                            <adBannerView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xYt-LU-LHg">
-                                <rect key="frame" x="140" y="506" width="320" height="50"/>
-                            </adBannerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -424,7 +416,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j61-3a-sLK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1012" y="322"/>
+            <point key="canvasLocation" x="903" y="313"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="dTv-Ml-Jmq">

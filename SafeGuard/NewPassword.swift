@@ -47,7 +47,7 @@ class NewPassword: UIViewController, UITextFieldDelegate {
             
         }
         
-        let alertAction3 = UIAlertAction(title: "Favorite meme?", style: .Default) { (ACTION) in
+        let alertAction3 = UIAlertAction(title: "Favorite Teacher?", style: .Default) { (ACTION) in
             self.question.text = "Favorite Teacher"
             self.passwords.question = "Favorite Teacher?"
             

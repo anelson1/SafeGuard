@@ -8,6 +8,7 @@
 
 import UIKit
 import LocalAuthentication
+import iAd
 
 
 class ViewController: UIViewController, UIAlertViewDelegate, UITextFieldDelegate {
@@ -20,7 +21,7 @@ class ViewController: UIViewController, UIAlertViewDelegate, UITextFieldDelegate
     var passwords = password()
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.canDisplayBannerAds = true
         self.navigationItem.setHidesBackButton(true, animated:true)
         //self.view.backgroundColor = UIColor(patternImage: UIImage(named: "ll")!)
         textField.delegate = self
@@ -40,7 +41,7 @@ class ViewController: UIViewController, UIAlertViewDelegate, UITextFieldDelegate
         }
         if passwords.password == ""
         {
-            let alert = UIAlertController(title: "Welcome", message: "Welcome to safeguard, Please make a password", preferredStyle: .Alert)
+            let alert = UIAlertController(title: "Welcome", message: "Welcome to SafeGuard, Please make a password", preferredStyle: .Alert)
             
             let alertaction = UIAlertAction(title: "Ok", style: .Default, handler: { (ACTION) in
                 self.performSegueWithIdentifier("toMakePassword", sender: nil)
@@ -66,11 +67,7 @@ class ViewController: UIViewController, UIAlertViewDelegate, UITextFieldDelegate
     
     
     @IBAction func resetPasswordAdmin(sender: AnyObject) {
-        passwords.password = ""
-        passwords.question = ""
-        passwords.questionAnswer = ""
-        print("Test")
-    }
+           }
     
     @IBAction func touchIDButton(sender: AnyObject) {
         activityIndicatiorView.startAnimating()
@@ -80,7 +77,7 @@ class ViewController: UIViewController, UIAlertViewDelegate, UITextFieldDelegate
     @IBAction func makePassword(sender: AnyObject) {
         if passwords.password != ""
         {
-            makeAlertView("Password", message: "A password already exists, if you forgot your password, please use the forgot password button", buttonTitle: "Ok")
+            makeAlertView("SafeGuard", message: "A password already exists, if you forgot your password, please use the forgot password button", buttonTitle: "Ok")
         }
         else
         {
@@ -97,10 +94,10 @@ class ViewController: UIViewController, UIAlertViewDelegate, UITextFieldDelegate
                     if field.text == self.passwords.questionAnswer
                     {
                         self.passwords.password = ""
-                        self.makeAlertView("Password", message: "Password was reset. Please make a new one", buttonTitle: "Ok")
+                        self.makeAlertView("SafeGuard", message: "Password was reset. Please make a new one", buttonTitle: "Ok")
                     }
                     else{
-                        self.makeAlertView("Password", message: "Password was incorrect, Please try again", buttonTitle: "OK")
+                        self.makeAlertView("SafeGuard", message: "Input was incorrect, Please try again", buttonTitle: "OK")
                     }
                 }
             }
@@ -118,7 +115,7 @@ class ViewController: UIViewController, UIAlertViewDelegate, UITextFieldDelegate
             
         }
         else{
-            makeAlertView("Password", message: "Password does not exist, please make one", buttonTitle: "Ok")
+            makeAlertView("SafeGuard", message: "Password does not exist, please make one", buttonTitle: "Ok")
         }
     }
     
@@ -129,10 +126,10 @@ class ViewController: UIViewController, UIAlertViewDelegate, UITextFieldDelegate
             
         }
         else if passwords.password != textField.text{
-            makeAlertView("Password", message: "Password was incorrect", buttonTitle: "Ok")
+            makeAlertView("SafeGuard", message: "Password was incorrect", buttonTitle: "Ok")
         }
         else{
-            makeAlertView("Password", message: "No Password Was Entered, Please Enter A Password", buttonTitle: "Ok")
+            makeAlertView("SafeGuard", message: "No Password Was Entered, Please Enter A Password", buttonTitle: "Ok")
         }
         
         
@@ -232,6 +229,7 @@ class ViewController: UIViewController, UIAlertViewDelegate, UITextFieldDelegate
             }
         }
     }
-}
+    
+    }
 
 

@@ -16,23 +16,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="splashscreen" translatesAutoresizingMaskIntoConstraints="NO" id="DTj-AB-Fqi">
-                                <rect key="frame" x="125" y="125" width="350" height="350"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launch3" translatesAutoresizingMaskIntoConstraints="NO" id="9dm-L1-K9G">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="DTj-AB-Fqi" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="IgF-rf-sbZ"/>
-                            <constraint firstItem="DTj-AB-Fqi" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="UqE-PC-yZ9"/>
+                            <constraint firstItem="9dm-L1-K9G" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="MPH-EI-qYz"/>
+                            <constraint firstItem="9dm-L1-K9G" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="NVh-NA-nJK"/>
+                            <constraint firstAttribute="trailing" secondItem="9dm-L1-K9G" secondAttribute="trailing" id="NdF-e3-vMV"/>
+                            <constraint firstItem="9dm-L1-K9G" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="PkW-Tc-a0o"/>
+                            <constraint firstItem="9dm-L1-K9G" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="aYy-GU-PVE"/>
+                            <constraint firstItem="9dm-L1-K9G" firstAttribute="bottom" secondItem="xb3-aO-Qok" secondAttribute="top" id="gi3-d1-i7H"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="181" y="432"/>
         </scene>
     </scenes>
     <resources>
-        <image name="splashscreen" width="640" height="960"/>
+        <image name="launch3" width="640" height="960"/>
     </resources>
 </document>

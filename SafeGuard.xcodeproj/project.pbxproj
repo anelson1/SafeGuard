@@ -13,6 +13,8 @@
 		3FB2A24A1CD12AA500329884 /* PasswordsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB2A2491CD12AA500329884 /* PasswordsViewController.swift */; };
 		3FB2A24C1CD12ABB00329884 /* ClassOfData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB2A24B1CD12ABB00329884 /* ClassOfData.swift */; };
 		3FB2A24E1CD24C0300329884 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB2A24D1CD24C0300329884 /* DetailViewController.swift */; };
+		3FB6552A1CE9FDEA00EE470D /* NavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB655291CE9FDEA00EE470D /* NavViewController.swift */; };
+		3FB6552C1CEA36B200EE470D /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FB6552B1CEA36B200EE470D /* iAd.framework */; };
 		3FCAD6551CDBA230004FBA16 /* PassTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCAD6541CDBA230004FBA16 /* PassTableViewCell.swift */; };
 		3FCAD6581CDBB789004FBA16 /* passwordClassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCAD6571CDBB789004FBA16 /* passwordClassword.swift */; };
 		3FCAD65B1CDCCBF0004FBA16 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FCAD6591CDCCBF0004FBA16 /* Realm.framework */; };
@@ -73,6 +75,8 @@
 		3FB2A2491CD12AA500329884 /* PasswordsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasswordsViewController.swift; sourceTree = "<group>"; };
 		3FB2A24B1CD12ABB00329884 /* ClassOfData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassOfData.swift; sourceTree = "<group>"; };
 		3FB2A24D1CD24C0300329884 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		3FB655291CE9FDEA00EE470D /* NavViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavViewController.swift; sourceTree = "<group>"; };
+		3FB6552B1CEA36B200EE470D /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 		3FCAD6541CDBA230004FBA16 /* PassTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PassTableViewCell.swift; sourceTree = "<group>"; };
 		3FCAD6571CDBB789004FBA16 /* passwordClassword.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = passwordClassword.swift; sourceTree = "<group>"; };
 		3FCAD6591CDCCBF0004FBA16 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
@@ -101,6 +105,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3FB6552C1CEA36B200EE470D /* iAd.framework in Frameworks */,
 				3FCAD6601CDCCDEB004FBA16 /* LocalAuthentication.framework in Frameworks */,
 				3FCAD65B1CDCCBF0004FBA16 /* Realm.framework in Frameworks */,
 				3FCAD65D1CDCCBF0004FBA16 /* RealmSwift.framework in Frameworks */,
@@ -127,6 +132,7 @@
 		3FEDED8C1CBC13F1005C4B56 = {
 			isa = PBXGroup;
 			children = (
+				3FB6552B1CEA36B200EE470D /* iAd.framework */,
 				3FCAD6591CDCCBF0004FBA16 /* Realm.framework */,
 				3FCAD65A1CDCCBF0004FBA16 /* RealmSwift.framework */,
 				3F878CF01CBD735100852685 /* LocalAuthentication.framework */,
@@ -153,6 +159,7 @@
 				3FEDED981CBC13F1005C4B56 /* AppDelegate.swift */,
 				3F5941C61CE38821001E4562 /* StyleConstants.swift */,
 				3FEDED9A1CBC13F1005C4B56 /* ViewController.swift */,
+				3FB655291CE9FDEA00EE470D /* NavViewController.swift */,
 				3FADA2611CBC15A000AF4659 /* NewPassword.swift */,
 				3FB2A2491CD12AA500329884 /* PasswordsViewController.swift */,
 				3FB2A24B1CD12ABB00329884 /* ClassOfData.swift */,
@@ -326,6 +333,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3FCAD6641CDCD249004FBA16 /* PasswordTableViewCell.swift in Sources */,
+				3FB6552A1CE9FDEA00EE470D /* NavViewController.swift in Sources */,
 				3F5941C71CE38821001E4562 /* StyleConstants.swift in Sources */,
 				3FEDED9B1CBC13F1005C4B56 /* ViewController.swift in Sources */,
 				3FB2A24C1CD12ABB00329884 /* ClassOfData.swift in Sources */,

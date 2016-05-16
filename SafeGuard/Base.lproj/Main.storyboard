@@ -418,10 +418,10 @@
             </objects>
             <point key="canvasLocation" x="903" y="313"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Nav View Controller-->
         <scene sceneID="dTv-Ml-Jmq">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="nad-KM-ZKZ" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="nad-KM-ZKZ" customClass="NavViewController" customModule="SafeGuard" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="r2f-FH-X4q">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>

@@ -6,8 +6,8 @@ import Foundation
 class PassTableViewCell: UITableViewCell {
     
     // initialize the date formatter only once, using a static computed property
-    static var dateFormatter: NSDateFormatter = {
-        var formatter = NSDateFormatter()
+    static var dateFormatter: DateFormatter = {
+        var formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd"
         return formatter
     }()
@@ -17,7 +17,7 @@ class PassTableViewCell: UITableViewCell {
     
     var meme: passwordClassword? {
         didSet {
-            if let meme = meme, titleLabel = titleLabel, dateLabel = dateLabel {
+            if let meme = meme, let titleLabel = titleLabel, let dateLabel = dateLabel {
                 titleLabel.text = meme.title
                 dateLabel.text = meme.content
             }

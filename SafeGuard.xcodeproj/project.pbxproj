@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3F5941C31CE0FAA0001E4562 /* NoteDisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5941C21CE0FAA0001E4562 /* NoteDisplayViewController.swift */; };
 		3F5941C71CE38821001E4562 /* StyleConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5941C61CE38821001E4562 /* StyleConstants.swift */; };
+		3F6939A21E8AF19E00A5C1B6 /* EvenMoreDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6939A11E8AF19E00A5C1B6 /* EvenMoreDataViewController.swift */; };
 		3FADA2621CBC15A000AF4659 /* NewPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FADA2611CBC15A000AF4659 /* NewPassword.swift */; };
 		3FB2A24A1CD12AA500329884 /* PasswordsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB2A2491CD12AA500329884 /* PasswordsViewController.swift */; };
 		3FB2A24C1CD12ABB00329884 /* ClassOfData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB2A24B1CD12ABB00329884 /* ClassOfData.swift */; };
@@ -70,6 +71,7 @@
 /* Begin PBXFileReference section */
 		3F5941C21CE0FAA0001E4562 /* NoteDisplayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteDisplayViewController.swift; sourceTree = "<group>"; };
 		3F5941C61CE38821001E4562 /* StyleConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyleConstants.swift; sourceTree = "<group>"; };
+		3F6939A11E8AF19E00A5C1B6 /* EvenMoreDataViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EvenMoreDataViewController.swift; sourceTree = "<group>"; };
 		3F878CF01CBD735100852685 /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
 		3FADA2611CBC15A000AF4659 /* NewPassword.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewPassword.swift; sourceTree = "<group>"; };
 		3FB2A2491CD12AA500329884 /* PasswordsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasswordsViewController.swift; sourceTree = "<group>"; };
@@ -163,6 +165,7 @@
 				3FB2A2491CD12AA500329884 /* PasswordsViewController.swift */,
 				3FB2A24B1CD12ABB00329884 /* ClassOfData.swift */,
 				3FEDED9C1CBC13F2005C4B56 /* Main.storyboard */,
+				3F6939A11E8AF19E00A5C1B6 /* EvenMoreDataViewController.swift */,
 				3FB6552D1CEA452C00EE470D /* NavViewController.swift */,
 				3F5941C21CE0FAA0001E4562 /* NoteDisplayViewController.swift */,
 				3FCAD6631CDCD249004FBA16 /* PasswordTableViewCell.swift */,
@@ -267,15 +270,18 @@
 					3FEDED941CBC13F1005C4B56 = {
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = 87L6T26E9H;
+						LastSwiftMigration = 0820;
 					};
 					3FEDEDA81CBC13F2005C4B56 = {
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = 87L6T26E9H;
+						LastSwiftMigration = 0820;
 						TestTargetID = 3FEDED941CBC13F1005C4B56;
 					};
 					3FEDEDB31CBC13F2005C4B56 = {
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = 87L6T26E9H;
+						LastSwiftMigration = 0820;
 						TestTargetID = 3FEDED941CBC13F1005C4B56;
 					};
 				};
@@ -342,6 +348,7 @@
 				3FCAD6681CDD08A3004FBA16 /* NewNoteViewController.swift in Sources */,
 				3FEDEDC71CBC163A005C4B56 /* password.swift in Sources */,
 				3F5941C31CE0FAA0001E4562 /* NoteDisplayViewController.swift in Sources */,
+				3F6939A21E8AF19E00A5C1B6 /* EvenMoreDataViewController.swift in Sources */,
 				3FCAD6581CDBB789004FBA16 /* passwordClassword.swift in Sources */,
 				3FCAD6551CDBA230004FBA16 /* PassTableViewCell.swift in Sources */,
 				3FB2A24A1CD12AA500329884 /* PasswordsViewController.swift in Sources */,
@@ -499,6 +506,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "A-Weapon-To-Surpass-Metal-Gear.SafeGuard";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -515,6 +523,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "A-Weapon-To-Surpass-Metal-Gear.SafeGuard";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -526,6 +535,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "A-Weapon-To-Surpass-Metal-Gear.SafeGuardTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SafeGuard.app/SafeGuard";
 			};
 			name = Debug;
@@ -538,6 +548,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "A-Weapon-To-Surpass-Metal-Gear.SafeGuardTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SafeGuard.app/SafeGuard";
 			};
 			name = Release;
@@ -549,6 +560,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "A-Weapon-To-Surpass-Metal-Gear.SafeGuardUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = SafeGuard;
 			};
 			name = Debug;
@@ -560,6 +572,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "A-Weapon-To-Surpass-Metal-Gear.SafeGuardUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = SafeGuard;
 			};
 			name = Release;

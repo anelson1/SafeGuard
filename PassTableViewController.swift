@@ -12,31 +12,32 @@ class PassTableViewController: UITableViewController,ADBannerViewDelegate {
     var bannerView: ADBannerView!
 
     var meme: passwordClassword?
+    var succ: PassTableViewCell?
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
-        bannerView = ADBannerView(adType: .Banner)
+        bannerView = ADBannerView(adType: .banner)
         bannerView.translatesAutoresizingMaskIntoConstraints = false
         bannerView.delegate = self
-        bannerView.hidden = true
+        bannerView.isHidden = true
         view.addSubview(bannerView)
         
         let viewsDictionary = ["bannerView": bannerView]
-        view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|[bannerView]|", options: [], metrics: nil, views: viewsDictionary))
-        view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:[bannerView]|", options: [], metrics: nil, views: viewsDictionary))
+        view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[bannerView]|", options: [], metrics: nil, views: viewsDictionary))
+        view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:[bannerView]|", options: [], metrics: nil, views: viewsDictionary))
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         do {
             let realm = try Realm()
-            passwords = realm.objects(passwordClassword).sorted("modificationDate", ascending: false)
+            passwords = realm.objects(passwordClassword).sorted(byKeyPath: "modificationDate", ascending: false)
         } catch {
             print("handle error")
         }
     }
-    @IBAction func unwindToSegue(segue: UIStoryboardSegue) {
+    @IBAction func unwindToSegue(_ segue: UIStoryboardSegue) {
         if let identifier = segue.identifier {
             print("Identifier \(identifier)")
         }
@@ -48,7 +49,7 @@ class PassTableViewController: UITableViewController,ADBannerViewDelegate {
                 switch identifier {
                 case "Save":
                     // 1
-                    let source = segue.sourceViewController as! NewNoteViewController
+                    let source = segue.source as! NewNoteViewController
                     try realm.write() {
                         realm.add(source.meme!)
                     }
@@ -58,28 +59,33 @@ class PassTableViewController: UITableViewController,ADBannerViewDelegate {
                         realm.delete(self.passwords!)
                     }
                     
-                    let source = segue.sourceViewController as! NoteDisplayViewController
+                    let source = segue.source as! NoteDisplayViewController
                     source.meme = nil;
                 default:
                 print("No one loves \(identifier)")
                 }
                 
-                passwords = realm.objects(passwordClassword).sorted("modificationDate", ascending: false)
+                passwords = realm.objects(passwordClassword).sorted(byKeyPath: "modificationDate", ascending: false)
             } catch {
                 print("handle error")
             }
         }    }
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "ShowExistingNote") {
-            let dvc = segue.destinationViewController as! NoteDisplayViewController
+            let dvc = segue.destination as! NoteDisplayViewController
             dvc.meme = self.meme
+        }
+        if (segue.identifier == "memes")
+        {
+            let dvc = segue.destination as! EvenMoreDataViewController
+            dvc.meme = meme
         }
     }
 }
 extension PassTableViewController {
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("PassCell", forIndexPath: indexPath) as! PassTableViewCell //1
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "PassCell", for: indexPath) as! PassTableViewCell //1
         let row = indexPath.row
         let passs = passwords[row] as passwordClassword
         cell.meme = passs
@@ -87,17 +93,17 @@ extension PassTableViewController {
         return cell
     }
     
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return passwords?.count ?? 0
     }
         // 3
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
     }
     
     // 4
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
             let note = passwords[indexPath.row] as Object
             
             do {
@@ -106,18 +112,19 @@ extension PassTableViewController {
                     realm.delete(note)
                 }
                 
-                passwords = realm.objects(passwordClassword).sorted("modificationDate", ascending: false)
+                passwords = realm.objects(passwordClassword).sorted(byKeyPath: "modificationDate", ascending: false)
             } catch {
                 print("handle error")
             }
         }
     }
-    func bannerViewDidLoadAd(banner: ADBannerView!) {
-        bannerView.hidden = false
+    func bannerViewDidLoadAd(_ banner: ADBannerView!) {
+        bannerView.isHidden = false
     }
     
-    func bannerView(banner: ADBannerView!, didFailToReceiveAdWithError error: NSError!) {
-        bannerView.hidden = true
+    func bannerView(_ banner: ADBannerView!, didFailToReceiveAdWithError error: Error!) {
+        bannerView.isHidden = true
     }
+    
 }
     

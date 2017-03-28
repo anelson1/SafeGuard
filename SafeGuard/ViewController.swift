@@ -16,7 +16,7 @@ class ViewController: UIViewController, UIAlertViewDelegate, UITextFieldDelegate
     @IBOutlet weak var forgotPassButton: UIButton!
     @IBOutlet weak var createAPassButton: UIButton!
     @IBOutlet weak var activityIndicatiorView: UIActivityIndicatorView!
-    let myDefaults = NSUserDefaults.standardUserDefaults()
+    let myDefaults = UserDefaults.standard
     let passwordstorage = "passwordstorage"
     var passwords = password()
     var bannerView: ADBannerView!
@@ -24,50 +24,50 @@ class ViewController: UIViewController, UIAlertViewDelegate, UITextFieldDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        bannerView = ADBannerView(adType: .Banner)
+        bannerView = ADBannerView(adType: .banner)
         bannerView.translatesAutoresizingMaskIntoConstraints = false
         bannerView.delegate = self
-        bannerView.hidden = true
+        bannerView.isHidden = true
         view.addSubview(bannerView)
         
         let viewsDictionary = ["bannerView": bannerView]
-        view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|[bannerView]|", options: [], metrics: nil, views: viewsDictionary))
-        view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:[bannerView]|", options: [], metrics: nil, views: viewsDictionary))
+        view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[bannerView]|", options: [], metrics: nil, views: viewsDictionary))
+        view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:[bannerView]|", options: [], metrics: nil, views: viewsDictionary))
         self.navigationItem.setHidesBackButton(true, animated:true)
         //self.view.backgroundColor = UIColor(patternImage: UIImage(named: "ll")!)
         textField.delegate = self
-        forgotPassButton.setTitle("Forgot Password?", forState: UIControlState.Normal)
+        forgotPassButton.setTitle("Forgot Password?", for: UIControlState())
         forgotPassButton.titleLabel?.numberOfLines = 0
-        if let password1 = myDefaults.objectForKey("passwordstorage")
+        if let password1 = myDefaults.object(forKey: "passwordstorage")
         {
-            passwords.password = String(password1)
+            passwords.password = String(describing: password1)
         }
-        if let question = myDefaults.objectForKey("question")
+        if let question = myDefaults.object(forKey: "question")
         {
-            passwords.question = String(question)
+            passwords.question = String(describing: question)
         }
-        if let questionAnswer = myDefaults.objectForKey("questionAnswer")
+        if let questionAnswer = myDefaults.object(forKey: "questionAnswer")
         {
-            passwords.questionAnswer = String(questionAnswer)
+            passwords.questionAnswer = String(describing: questionAnswer)
         }
         if passwords.password == ""
         {
-            let alert = UIAlertController(title: "Welcome", message: "Welcome to SafeGuard, Please make a password", preferredStyle: .Alert)
+            let alert = UIAlertController(title: "Welcome", message: "Welcome to SafeGuard, Please make a password", preferredStyle: .alert)
             
-            let alertaction = UIAlertAction(title: "Ok", style: .Default, handler: { (ACTION) in
-                self.performSegueWithIdentifier("toMakePassword", sender: nil)
+            let alertaction = UIAlertAction(title: "Ok", style: .default, handler: { (ACTION) in
+                self.performSegue(withIdentifier: "toMakePassword", sender: nil)
             })
             alert.addAction(alertaction)
-            presentViewController(alert, animated: true, completion: nil)
+            present(alert, animated: true, completion: nil)
         }
         
     }
-    func textFieldShouldReturn(textField: UITextField!) -> Bool {
+    func textFieldShouldReturn(_ textField: UITextField!) -> Bool {
         textField.resignFirstResponder()
 
         if passwords.password == textField.text
         {
-            performSegueWithIdentifier("toMain", sender: nil)
+            performSegue(withIdentifier: "toMain", sender: nil)
             
         }
         else{
@@ -77,30 +77,30 @@ class ViewController: UIViewController, UIAlertViewDelegate, UITextFieldDelegate
     }
     
     
-    @IBAction func resetPasswordAdmin(sender: AnyObject) {
+    @IBAction func resetPasswordAdmin(_ sender: AnyObject) {
            }
     
-    @IBAction func touchIDButton(sender: AnyObject) {
+    @IBAction func touchIDButton(_ sender: AnyObject) {
         activityIndicatiorView.startAnimating()
 
         authenticateUser()
     }
-    @IBAction func makePassword(sender: AnyObject) {
+    @IBAction func makePassword(_ sender: AnyObject) {
         if passwords.password != ""
         {
             makeAlertView("SafeGuard", message: "A password already exists, if you forgot your password, please use the forgot password button", buttonTitle: "Ok")
         }
         else
         {
-            performSegueWithIdentifier("toMakePassword", sender: nil)        }
+            performSegue(withIdentifier: "toMakePassword", sender: nil)        }
     }
     
-    @IBAction func resetPassword(sender: AnyObject) {
+    @IBAction func resetPassword(_ sender: AnyObject) {
         if passwords.password != ""
         {
-            let alertController = UIAlertController(title: "Reset Password", message: passwords.question, preferredStyle: .Alert)
+            let alertController = UIAlertController(title: "Reset Password", message: passwords.question, preferredStyle: .alert)
             
-            let confirmAction = UIAlertAction(title: "Confirm", style: .Default) { (_) in
+            let confirmAction = UIAlertAction(title: "Confirm", style: .default) { (_) in
                 if let field = alertController.textFields![0] as? UITextField {
                     if field.text == self.passwords.questionAnswer
                     {
@@ -113,16 +113,16 @@ class ViewController: UIViewController, UIAlertViewDelegate, UITextFieldDelegate
                 }
             }
             
-            let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { (_) in }
+            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (_) in }
             
-            alertController.addTextFieldWithConfigurationHandler { (textField) in
+            alertController.addTextField { (textField) in
                 textField.placeholder = "Password"
             }
             
             alertController.addAction(confirmAction)
             alertController.addAction(cancelAction)
             
-            self.presentViewController(alertController, animated: true, completion: nil)
+            self.present(alertController, animated: true, completion: nil)
             
         }
         else{
@@ -130,10 +130,10 @@ class ViewController: UIViewController, UIAlertViewDelegate, UITextFieldDelegate
         }
     }
     
-    @IBAction func continueButton(sender: AnyObject) {
+    @IBAction func continueButton(_ sender: AnyObject) {
         if passwords.password == textField.text && textField.text != ""
         {
-            performSegueWithIdentifier("toMain", sender: nil)
+            performSegue(withIdentifier: "toMain", sender: nil)
             
         }
         else if passwords.password != textField.text{
@@ -145,28 +145,28 @@ class ViewController: UIViewController, UIAlertViewDelegate, UITextFieldDelegate
         
         
     }
-    @IBAction func onScreenTapped(sender: AnyObject) {
+    @IBAction func onScreenTapped(_ sender: AnyObject) {
         textField.resignFirstResponder()
     }
     
-    func makeAlertView(title: String, message: String, buttonTitle: String)
+    func makeAlertView(_ title: String, message: String, buttonTitle: String)
     {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .Alert)
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         
-        let alertaction = UIAlertAction(title: buttonTitle, style: .Default, handler: nil)
+        let alertaction = UIAlertAction(title: buttonTitle, style: .default, handler: nil)
         alert.addAction(alertaction)
-        presentViewController(alert, animated: true, completion: nil)
+        present(alert, animated: true, completion: nil)
     }
     func authenticateUser() {
         let context = LAContext()
         var error: NSError?
-        var reasonString = "Authentication is needed to access your files."
+        let reasonString = "Authentication is needed to access your files."
         
-        if context.canEvaluatePolicy(LAPolicy.DeviceOwnerAuthenticationWithBiometrics, error: &error) {
-            [context .evaluatePolicy(LAPolicy.DeviceOwnerAuthenticationWithBiometrics, localizedReason: reasonString, reply: { (success: Bool, evalPolicyError: NSError?) -> Void in
+        if context.canEvaluatePolicy(LAPolicy.deviceOwnerAuthenticationWithBiometrics, error: &error) {
+            [context .evaluatePolicy(LAPolicy.deviceOwnerAuthenticationWithBiometrics, localizedReason: reasonString, reply: { (success: Bool, evalPolicyError: NSError?) -> Void in
 
                 if success {
-                    self.performSegueWithIdentifier("toMain", sender: nil)
+                    self.performSegue(withIdentifier: "toMain", sender: nil)
                     
                 }
                 else{
@@ -175,17 +175,17 @@ class ViewController: UIViewController, UIAlertViewDelegate, UITextFieldDelegate
                     
                     switch evalPolicyError!.code {
                         
-                    case LAError.SystemCancel.rawValue:
+                    case LAError.Code.systemCancel.rawValue:
                         print("Authentication was cancelled by the system")
                         self.activityIndicatiorView.stopAnimating()
 
                         
-                    case LAError.UserCancel.rawValue:
+                    case LAError.Code.userCancel.rawValue:
                         print("Authentication was cancelled by the user")
                         self.activityIndicatiorView.stopAnimating()
 
                         
-                    case LAError.UserFallback.rawValue:
+                    case LAError.Code.userFallback.rawValue:
                         self.activityIndicatiorView.stopAnimating()
                         print("User selected to enter custom password")
                         self.showPasswordAlert()
@@ -197,16 +197,16 @@ class ViewController: UIViewController, UIAlertViewDelegate, UITextFieldDelegate
                     }
                 }
                 
-            })]
+            } as! (Bool, Error?) -> Void)]
         }
         else{
             switch error!.code{
                 
-            case LAError.TouchIDNotEnrolled.rawValue:
+            case LAError.Code.touchIDNotEnrolled.rawValue:
                 print("TouchID is not enrolled")
                 self.activityIndicatiorView.stopAnimating()
 
-            case LAError.PasscodeNotSet.rawValue:
+            case LAError.Code.passcodeNotSet.rawValue:
                 print("A passcode has not been set")
                 self.activityIndicatiorView.stopAnimating()
 
@@ -220,15 +220,15 @@ class ViewController: UIViewController, UIAlertViewDelegate, UITextFieldDelegate
         }
     }
     func showPasswordAlert() {
-        var passwordAlert : UIAlertView = UIAlertView(title: "SafeGuard", message: "Device is not Touch ID enrolled, Please enter password", delegate: self, cancelButtonTitle: "Cancel", otherButtonTitles: "Okay")
-        passwordAlert.alertViewStyle = UIAlertViewStyle.SecureTextInput
+        let passwordAlert : UIAlertView = UIAlertView(title: "SafeGuard", message: "Device is not Touch ID enrolled, Please enter password", delegate: self, cancelButtonTitle: "Cancel", otherButtonTitles: "Okay")
+        passwordAlert.alertViewStyle = UIAlertViewStyle.secureTextInput
         passwordAlert.show()
     }
-    func alertView(alertView: UIAlertView!, clickedButtonAtIndex buttonIndex: Int) {
+    func alertView(_ alertView: UIAlertView, clickedButtonAt buttonIndex: Int) {
         if buttonIndex == 1 {
-            if !alertView.textFieldAtIndex(0)!.text!.isEmpty {
-                if alertView.textFieldAtIndex(0)!.text == passwords.password {
-                    performSegueWithIdentifier("toMakePassword", sender: nil)
+            if !alertView.textField(at: 0)!.text!.isEmpty {
+                if alertView.textField(at: 0)!.text == passwords.password {
+                    performSegue(withIdentifier: "toMakePassword", sender: nil)
                     
                 }
                 else{
@@ -240,12 +240,12 @@ class ViewController: UIViewController, UIAlertViewDelegate, UITextFieldDelegate
             }
         }
     }
-    func bannerViewDidLoadAd(banner: ADBannerView!) {
-        bannerView.hidden = false
+    func bannerViewDidLoadAd(_ banner: ADBannerView!) {
+        bannerView.isHidden = false
     }
     
-    func bannerView(banner: ADBannerView!, didFailToReceiveAdWithError error: NSError!) {
-        bannerView.hidden = true
+    func bannerView(_ banner: ADBannerView!, didFailToReceiveAdWithError error: Error!) {
+        bannerView.isHidden = true
     }
     }
 

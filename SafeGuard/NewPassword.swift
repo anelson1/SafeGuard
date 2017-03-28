@@ -17,58 +17,58 @@ class NewPassword: UIViewController, UITextFieldDelegate,ADBannerViewDelegate {
     @IBOutlet weak var confirmTextField: UITextField!
     @IBOutlet weak var enterTextField: UITextField!
     var passwords = password()
-    let myDefaults = NSUserDefaults.standardUserDefaults()
+    let myDefaults = UserDefaults.standard
     var bannerView : ADBannerView!
     override func viewDidLoad() {
-        bannerView = ADBannerView(adType: .Banner)
+        bannerView = ADBannerView(adType: .banner)
         bannerView.translatesAutoresizingMaskIntoConstraints = false
         bannerView.delegate = self
-        bannerView.hidden = true
+        bannerView.isHidden = true
         view.addSubview(bannerView)
         
         let viewsDictionary = ["bannerView": bannerView]
-        view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|[bannerView]|", options: [], metrics: nil, views: viewsDictionary))
-        view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:[bannerView]|", options: [], metrics: nil, views: viewsDictionary))
+        view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[bannerView]|", options: [], metrics: nil, views: viewsDictionary))
+        view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:[bannerView]|", options: [], metrics: nil, views: viewsDictionary))
         super.viewDidLoad()
         confirmTextField.delegate = self
         enterTextField.delegate = self
         questionField.delegate = self
     }
     
-    @IBAction func onScreenTapped(sender: AnyObject) {
+    @IBAction func onScreenTapped(_ sender: AnyObject) {
         enterTextField.resignFirstResponder()
         confirmTextField.resignFirstResponder()
         questionField.resignFirstResponder()
     }
     
-    @IBAction func pickQuestion(sender: AnyObject) {
-        let alert = UIAlertController(title: "Select question", message: nil, preferredStyle: .ActionSheet)
-        let alertAction = UIAlertAction(title: "Favorite Pets Name?", style: .Default) { (ACTION) in
+    @IBAction func pickQuestion(_ sender: AnyObject) {
+        let alert = UIAlertController(title: "Select question", message: nil, preferredStyle: .actionSheet)
+        let alertAction = UIAlertAction(title: "Favorite Pets Name?", style: .default) { (ACTION) in
             self.question.text = "Favorite Pets Name?"
             self.passwords.question = "Favorite Pets Name?"
         }
-        let alertAction1 = UIAlertAction(title: "Mothers Maiden Name?", style: .Default) { (ACTION) in
+        let alertAction1 = UIAlertAction(title: "Mothers Maiden Name?", style: .default) { (ACTION) in
             self.question.text = "Mothers Maiden Name?"
             self.passwords.question = "Mothers Maiden Name?"
         }
-        let alertAction2 = UIAlertAction(title: "Street You Grew Up On?", style: .Default) { (ACTION) in
+        let alertAction2 = UIAlertAction(title: "Street You Grew Up On?", style: .default) { (ACTION) in
             self.question.text = "Street You Grew Up On?"
             self.passwords.question = "Street You Grew Up On?"
             
         }
         
-        let alertAction3 = UIAlertAction(title: "Favorite Teacher?", style: .Default) { (ACTION) in
+        let alertAction3 = UIAlertAction(title: "Favorite Teacher?", style: .default) { (ACTION) in
             self.question.text = "Favorite Teacher"
             self.passwords.question = "Favorite Teacher?"
             
         }
         
-        let alertAction4 = UIAlertAction(title: "Favorite Fictional Character?", style: .Default) { (ACTION) in
+        let alertAction4 = UIAlertAction(title: "Favorite Fictional Character?", style: .default) { (ACTION) in
             self.question.text = "Favorite Fictional Character?"
             self.passwords.question = "Favorite Fictional Character?"
             
         }
-        let cancel = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         
         
         
@@ -78,55 +78,55 @@ class NewPassword: UIViewController, UITextFieldDelegate,ADBannerViewDelegate {
         alert.addAction(alertAction3)
         alert.addAction(alertAction4)
         alert.addAction(cancel)
-        presentViewController(alert, animated: true, completion: nil)
+        present(alert, animated: true, completion: nil)
     }
     
-    @IBAction func makePassword(sender: AnyObject) {
+    @IBAction func makePassword(_ sender: AnyObject) {
         if enterTextField.text == confirmTextField.text && questionField.text != "" && passwords.question != ""
         {
             passwords.password = enterTextField.text!
             passwords.questionAnswer = questionField.text!
-            myDefaults.setObject(questionField.text, forKey: "questionAnswer")
-            myDefaults.setObject(enterTextField.text, forKey: "passwordstorage")
-            myDefaults.setObject(passwords.question, forKey: "question")
-            let alert = UIAlertController(title: "Password Confirm", message: "Your password has been saved", preferredStyle: .Alert)
-            let alertaction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+            myDefaults.set(questionField.text, forKey: "questionAnswer")
+            myDefaults.set(enterTextField.text, forKey: "passwordstorage")
+            myDefaults.set(passwords.question, forKey: "question")
+            let alert = UIAlertController(title: "Password Confirm", message: "Your password has been saved", preferredStyle: .alert)
+            let alertaction = UIAlertAction(title: "OK", style: .default, handler: nil)
             alert.addAction(alertaction)
-            presentViewController(alert, animated: true, completion: nil)
+            present(alert, animated: true, completion: nil)
             
             
         }
         else if questionField.text == ""
         {
-            let alert = UIAlertController(title: "Password Confirm", message: "You did not fill in a secret question", preferredStyle: .Alert)
-            let alertaction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+            let alert = UIAlertController(title: "Password Confirm", message: "You did not fill in a secret question", preferredStyle: .alert)
+            let alertaction = UIAlertAction(title: "OK", style: .default, handler: nil)
             alert.addAction(alertaction)
-            presentViewController(alert, animated: true, completion: nil)
+            present(alert, animated: true, completion: nil)
         }
         else if passwords.question == ""
         {
-            let alert = UIAlertController(title: "Password Confirm", message: "You did not pick a secret question", preferredStyle: .Alert)
-            let alertaction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+            let alert = UIAlertController(title: "Password Confirm", message: "You did not pick a secret question", preferredStyle: .alert)
+            let alertaction = UIAlertAction(title: "OK", style: .default, handler: nil)
             alert.addAction(alertaction)
-            presentViewController(alert, animated: true, completion: nil)
+            present(alert, animated: true, completion: nil)
         }
         else{
-            let alert = UIAlertController(title: "Password meme", message: "Your passwords did not match", preferredStyle: .Alert)
-            let alertaction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+            let alert = UIAlertController(title: "Password", message: "Your passwords did not match", preferredStyle: .alert)
+            let alertaction = UIAlertAction(title: "OK", style: .default, handler: nil)
             alert.addAction(alertaction)
-            presentViewController(alert, animated: true, completion: nil)
+            present(alert, animated: true, completion: nil)
         }
         
     }
-    func textFieldShouldReturn(textField: UITextField!) -> Bool {   //delegate method
+    func textFieldShouldReturn(_ textField: UITextField!) -> Bool {   //delegate method
         textField.resignFirstResponder()
         return true
     }
     
-    @IBAction func onDoneTapped(sender: AnyObject) {
-        dismissViewControllerAnimated(true) { 
-             func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-                let dvc = segue.destinationViewController as! ViewController
+    @IBAction func onDoneTapped(_ sender: AnyObject) {
+        dismiss(animated: true) { 
+             func prepareForSegue(_ segue: UIStoryboardSegue, sender: AnyObject?) {
+                let dvc = segue.destination as! ViewController
                 dvc.passwords = self.passwords.self
                 
                 
@@ -136,11 +136,11 @@ class NewPassword: UIViewController, UITextFieldDelegate,ADBannerViewDelegate {
         }
 
     }
-    func bannerViewDidLoadAd(banner: ADBannerView!) {
-        bannerView.hidden = false
+    func bannerViewDidLoadAd(_ banner: ADBannerView!) {
+        bannerView.isHidden = false
     }
     
-    func bannerView(banner: ADBannerView!, didFailToReceiveAdWithError error: NSError!) {
-        bannerView.hidden = true
+    func bannerView(_ banner: ADBannerView!, didFailToReceiveAdWithError error: Error!) {
+        bannerView.isHidden = true
     }
 }

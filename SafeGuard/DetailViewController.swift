@@ -9,23 +9,22 @@ class DetailViewController: UIViewController {
     var data = ClassOfData()
     var passwords = password()
     var dataArray = [String]()
-    let savedPassword = NSUserDefaults.standardUserDefaults()
-    var passwordArray = []
+    let savedPassword = UserDefaults.standard
    
         override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "ll")!)
             
-            if var anothersavedPassword = savedPassword.stringForKey("RealPassword"){
+            if var anothersavedPassword = savedPassword.string(forKey: "RealPassword"){
 anothersavedPassword = data.password            }
         passwordTextField.text = data.password
             passwordTitle.text = data.title
             
     }
-    @IBAction func onScreenTapped(sender: AnyObject) {
+    @IBAction func onScreenTapped(_ sender: AnyObject) {
         passwordTextField.resignFirstResponder()
     }
-    @IBAction func saveButton(sender: AnyObject) {
+    @IBAction func saveButton(_ sender: AnyObject) {
         data.password = passwordTextField.text
         savedPassword.setValue(data.password, forKey: "RealPassword")
         savedPassword.synchronize()

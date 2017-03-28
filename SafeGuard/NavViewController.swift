@@ -9,7 +9,7 @@
 import UIKit
 
 class NavViewController: UINavigationController {
-    override func shouldAutorotate() -> Bool {
+    override var shouldAutorotate : Bool {
         
         return false
         

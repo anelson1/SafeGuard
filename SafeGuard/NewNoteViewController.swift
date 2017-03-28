@@ -8,29 +8,29 @@ class NewNoteViewController: UIViewController,ADBannerViewDelegate {
    
     override func viewDidLoad() {
         super.viewDidLoad()
-        bannerView = ADBannerView(adType: .Banner)
+        bannerView = ADBannerView(adType: .banner)
         bannerView.translatesAutoresizingMaskIntoConstraints = false
         bannerView.delegate = self
-        bannerView.hidden = true
+        bannerView.isHidden = true
         view.addSubview(bannerView)
         
         let viewsDictionary = ["bannerView": bannerView]
-        view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|[bannerView]|", options: [], metrics: nil, views: viewsDictionary))
-        view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:[bannerView]|", options: [], metrics: nil, views: viewsDictionary))
+        view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[bannerView]|", options: [], metrics: nil, views: viewsDictionary))
+        view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:[bannerView]|", options: [], metrics: nil, views: viewsDictionary))
         
     }
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "ShowNewNote") {
             meme = passwordClassword()
-            let dvc = segue.destinationViewController as! NoteDisplayViewController
+            let dvc = segue.destination as! NoteDisplayViewController
             dvc.meme = meme
         }
     }
-    func bannerViewDidLoadAd(banner: ADBannerView!) {
-        bannerView.hidden = false
+    func bannerViewDidLoadAd(_ banner: ADBannerView!) {
+        bannerView.isHidden = false
     }
     
-    func bannerView(banner: ADBannerView!, didFailToReceiveAdWithError error: NSError!) {
-        bannerView.hidden = true
+    func bannerView(_ banner: ADBannerView!, didFailToReceiveAdWithError error: Error!) {
+        bannerView.isHidden = true
     }
     }

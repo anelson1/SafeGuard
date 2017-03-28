@@ -19,7 +19,7 @@ class PasswordsViewController: UIViewController, UITableViewDataSource, UITableV
     
     dynamic var data : [ClassOfData] = []
     var dataArray = [String]()
-    let savedCell = NSUserDefaults.standardUserDefaults()
+    let savedCell = UserDefaults.standard
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,46 +27,46 @@ class PasswordsViewController: UIViewController, UITableViewDataSource, UITableV
         
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "ll")!)
         
-        if let cell = savedCell.valueForKey("SavedCells"){
-            if let passsword = savedCell.valueForKey("Password"){
-            data.append(ClassOfData(title: String(cell), password: String(passsword)))
+        if let cell = savedCell.value(forKey: "SavedCells"){
+            if let passsword = savedCell.value(forKey: "Password"){
+            data.append(ClassOfData(title: String(describing: cell), password: String(describing: passsword)))
 
         }
         }
                print(data.count)
     }
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         tableView.reloadData()
     }
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return data.count
     }
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCellWithIdentifier("myCell", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath)
         cell.textLabel?.text = data[indexPath.row].title
         return cell
     }
-    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            data.removeAtIndex(indexPath.row)
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            data.remove(at: indexPath.row)
             tableView.reloadData()
         }
     }
     
-    @IBAction func onPlusTapped(sender: UIBarButtonItem) {
-        let alert = UIAlertController(title: "Add Password", message: nil, preferredStyle: .Alert)
-        alert.addTextFieldWithConfigurationHandler { (textField) -> Void in
+    @IBAction func onPlusTapped(_ sender: UIBarButtonItem) {
+        let alert = UIAlertController(title: "Add Password", message: nil, preferredStyle: .alert)
+        alert.addTextField { (textField) -> Void in
             textField.placeholder = "Add Password Title Here"
         }
-        alert.addTextFieldWithConfigurationHandler { (textField2) -> Void in
+        alert.addTextField { (textField2) -> Void in
             textField2.placeholder = "Add Password Here"
         }
 
-        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         alert.addAction(cancelAction)
-        let addAction = UIAlertAction(title: "Add", style: .Default) { (action) -> Void in
+        let addAction = UIAlertAction(title: "Add", style: .default) { (action) -> Void in
             let passwordTextField = alert.textFields![0] as UITextField
             let otherPasswordTextField = alert.textFields![1] as UITextField
            
@@ -79,30 +79,30 @@ class PasswordsViewController: UIViewController, UITableViewDataSource, UITableV
             self.tableView.reloadData()
         }
         alert.addAction(addAction)
-        self.presentViewController(alert, animated: true, completion: nil)
+        self.present(alert, animated: true, completion: nil)
     }
-    func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+    func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
         return true
     }
-    func tableView(tableView: UITableView, moveRowAtIndexPath sourceIndexPath: NSIndexPath, toIndexPath destinationIndexPath: NSIndexPath) {
+    func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
         let collage = data[sourceIndexPath.row]
-        data.removeAtIndex(sourceIndexPath.row)
-        data.insert(collage, atIndex: destinationIndexPath.row)
+        data.remove(at: sourceIndexPath.row)
+        data.insert(collage, at: destinationIndexPath.row)
     }
     
-    @IBAction func onEditTapped(sender: UIBarButtonItem) {
+    @IBAction func onEditTapped(_ sender: UIBarButtonItem) {
         if sender.tag == 0 {
-            tableView.editing = true
+            tableView.isEditing = true
             sender.tag = 1
         }
         else {
-            tableView.editing = false
+            tableView.isEditing = false
             sender.tag = 0
         }
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let dvc = segue.destinationViewController as! DetailViewController
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let dvc = segue.destination as! DetailViewController
         let index = tableView.indexPathForSelectedRow?.row
         dvc.data = data[index!]
         
